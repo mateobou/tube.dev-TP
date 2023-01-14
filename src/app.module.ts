@@ -1,20 +1,15 @@
 import { Module } from '@nestjs/common';
-import { join } from 'path';
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UserService } from './user/user.serivce';
+import { UsersController } from './user/users.controller';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/skilz'),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      debug: false,
-      playground: false,
-    }),
+    MongooseModule.forRoot(
+      'mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/test',
+    ),
   ],
   controllers: [AppController],
   providers: [AppService],
