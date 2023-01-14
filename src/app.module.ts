@@ -17,4 +17,13 @@ import { UsersModule } from "./user/users.module";
   controllers: [AppController],
   providers: [AppService],
 })
+@Module({
+  imports: [
+    MongooseModule.forRoot(
+      'mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/test',
+    ),
+  ],
+  controllers: [UsersController],
+  providers: [UserService],
+})
 export class AppModule {}
