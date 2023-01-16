@@ -1,16 +1,16 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
-import { CreateUserdto } from './dto/create-user.dto';
-import { UpdateUserdto } from './dto/update-user.dto';
+import { Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
+import { CreateUserdto } from "./dto/create-user.dto";
+import { UpdateUserdto } from "./dto/update-user.dto";
 
-import { User } from './schemas/user.schema';
-import { UserService } from './user.serivce';
+import { User } from "./schemas/user.schema";
+import { UserService } from "./user.serivce";
 
-@Controller('users')
+@Controller("users")
 export class UsersController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('userId')
-  async getUser(@Param('userId') userId: string): Promise<User> {
+  @Get("userId")
+  async getUser(@Param("userId") userId: string): Promise<User> {
     return this.userService.getUseById(userId);
   }
 
@@ -27,9 +27,9 @@ export class UsersController {
     );
   }
 
-  @Patch(':userId')
+  @Patch(":userId")
   async updateUser(
-    @Param('userId') userId: string,
+    @Param("userId") userId: string,
     @Body() updateUserDto: UpdateUserdto,
   ): Promise<User> {
     return this.userService.updateUser(userId, updateUserDto);

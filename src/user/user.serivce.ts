@@ -1,8 +1,8 @@
-import { Injectable } from "@nestjs/common";
-import { v4 as uuidv4 } from "uuid";
-import { UpdateUserdto } from "./dto/update-user.dto";
-import { UserRepository } from "./user.repository";
-import { User } from "./schemas/user.schema";
+import { Injectable } from '@nestjs/common';
+import { v4 as uuidv4 } from 'uuid';
+import { UpdateUserdto } from './dto/update-user.dto';
+import { UserRepository } from './user.repository';
+import { User } from './schemas/user.schema';
 
 @Injectable()
 export class UserService {
@@ -21,8 +21,8 @@ export class UserService {
       userId: uuidv4(),
       email,
       password,
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
     });
   }
 
