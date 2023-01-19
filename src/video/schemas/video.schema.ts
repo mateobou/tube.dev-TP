@@ -9,13 +9,19 @@ export type VideoDocument = HydratedDocument<Video>;
 @Schema()
 export class Video {
   @Prop()
-  name: string;
+  id: number;
 
   @Prop()
-  age: number;
+  MovieName: string;
 
   @Prop()
-  breed: string;
+  DirectorOfMovie: string;
+
+  @Prop()
+  NomberOfView: number;
+
+  @Prop()
+  Rating: number;
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);
