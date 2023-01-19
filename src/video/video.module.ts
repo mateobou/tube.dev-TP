@@ -1,19 +1,18 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 // import { VideoController } from './video/video.controller';
-import { Video } from '../video/video.entity';
 import { VideoService } from '../video/video.service';
 import { VideoController } from '../video/video.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+
+import { Video, VideoSchema } from './schemas/video.schema';
 
 
 
 @Module({
   imports: [
-   TypeOrmModule.forFeature([Video]),
+    MongooseModule.forFeature([{ name: Video.name, schema: VideoSchema }])],
    providers: [VideoService],
    controllers: [VideoController],
-  ],
-  providers: [],
-  controllers: [],
 })
 export class VideoModule {}
