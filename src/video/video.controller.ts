@@ -4,7 +4,7 @@ import { Video } from './schemas/video.schema';
 
 
 @Controller('video')
-export class CatsController {
+export class VideoController {
   constructor(private readonly videoService: VideoService) {}
 
 

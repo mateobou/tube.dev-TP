@@ -5,7 +5,6 @@ import { AppService } from './app.service';
 
 // Pour la partie vidéo
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Video } from './video/video.entity';
 import { VideoModule } from './video/video.module';
 
 @Module({
@@ -25,7 +24,6 @@ import { VideoModule } from './video/video.module';
       username: 'root',
       password: 'root',
       database: 'test',
-      entities: [Video],
       synchronize: false,
       retryAttempts: 5,
       autoLoadEntities: true,
