@@ -1,26 +1,27 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Video } from './video.entity';
+
+import { Model } from 'mongoose';
+import { Video, VideoDocument } from './schemas/video.schema';
 
 
 
 @Injectable()
 export class VideoService {
     constructor(
-    @InjectRepository(Video)
-    private readonly videoRepository: Repository<Video>,
+        @InjectRepository(Video.name) private readonly videoModel: Model<VideoDocument>,
     ) {}
 
-   findAll(): Promise<Video[]> {
-    return this.videoRepository.find();
+
+    async create(createVideoDto: CreateVideoDto): Promise<Video> {
+        const createdVideo = await this.videoModel.create(createVideoDto);
+        return createdVideo;
+      }
+
+    
+    async findAll(): Promise<Video[]> {
+      return this.videoModel.find().exec();
     }
 
-    findOne(id: string): Promise<Video> {
-    return this.videoRepository.findOneBy({ id });
-    }
-
-    async remove(id: string): Promise<void> {
-    await this.videoRepository.delete(id);
-    }
 }
