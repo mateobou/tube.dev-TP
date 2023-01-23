@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 
 import { Model } from 'mongoose';
 import { Video, VideoDocument } from './schemas/video.schema';
+import { CreateVideoDto } from './dto/create-video.dto';
 
 
 
