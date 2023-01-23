@@ -16,13 +16,18 @@ export class UserService {
     return this.userRepository.find({});
   }
 
-  async createUser(email: string, password: string): Promise<User> {
+  async createUser(
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string,
+  ): Promise<User> {
     return this.userRepository.create({
       userId: uuidv4(),
-      email,
-      password,
-      firstName: '',
-      lastName: '',
+      email: email,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
     });
   }
 

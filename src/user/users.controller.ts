@@ -23,6 +23,8 @@ export class UsersController {
   async createUser(@Body() createUserDto: CreateUserdto): Promise<User> {
     return this.userService.createUser(
       createUserDto.email,
+      createUserDto.firstName,
+      createUserDto.lastName,
       createUserDto.password,
     );
   }
