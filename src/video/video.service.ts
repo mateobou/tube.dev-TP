@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Video, VideoDocument } from './schemas/video.schema';
-import { CreateVideoDto } from './dto/create-video.dto';
 import { VideoRepository } from './video.repository';
-import { UpdateVideoDto } from './dto/update-video.dto';
 import { v4 as uuidv4 } from 'uuid';
 
 
