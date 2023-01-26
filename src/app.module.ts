@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -10,27 +9,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    /*
-     MongooseModule.forRoot(
-      "mongodb+srv://protube:test@cluster0.erzbctl.mongodb.net/test",
-    ),
-    //Ce code permet de se connecter à la bdd qu'a créé Luca. 
-    //Pour le moment seulement Luca y a accès mais tu peux temporairement créer la tienne avec MongoDb Compass et en te connectant sur le site de
-    //MongoDb 
-    */
-    /*
-    
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'cluster0.m4mrrwq.mongodb.net',
-      port: 3306,
-      username: 'usertest',
-      password: 'test',
-      database: 'test',
-      synchronize: false,
-      retryAttempts: 5,
-      autoLoadEntities: true,
-    }),*/
     VideoModule,
     MongooseModule.forRoot('mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/test')
   

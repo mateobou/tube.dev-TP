@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { VideoService } from '../video/video.service';
 import { VideoController } from '../video/video.controller';
 import { MongooseModule } from '@nestjs/mongoose';
