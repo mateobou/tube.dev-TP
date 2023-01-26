@@ -18,20 +18,23 @@ import { MongooseModule } from '@nestjs/mongoose';
     //Pour le moment seulement Luca y a accès mais tu peux temporairement créer la tienne avec MongoDb Compass et en te connectant sur le site de
     //MongoDb 
     */
+    /*
+    
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'cluster0.m4mrrwq.mongodb.net',
       port: 3306,
-      username: 'root',
-      password: 'root',
+      username: 'usertest',
+      password: 'test',
       database: 'test',
       synchronize: false,
       retryAttempts: 5,
       autoLoadEntities: true,
-    }),
+    }),*/
     VideoModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/protube')
+    MongooseModule.forRoot('mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/test')
   
+
   ],
   controllers: [AppController],
   providers: [AppService],
