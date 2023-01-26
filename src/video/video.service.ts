@@ -1,38 +1,40 @@
 import { Injectable } from '@nestjs/common';
 import { Video, VideoDocument } from './schemas/video.schema';
 import { CreateVideoDto } from './dto/create-video.dto';
-import { VideoModek}
-import { VideosRepository } from './video.repository';
+import { VideoRepository } from './video.repository';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { v4 as uuidv4 } from 'uuid';
 
 
 @Injectable()
-export class VideosService {
+export class VideoService {
     constructor (
-        private readonly VideosRepository: VideosRepository ) {}
+        private readonly VideoRepository: VideoRepository ) {}
     
 
 
     async getVideoById(videoId: string): Promise<Video> {
-        return this.VideosRepository.findOne({ videoId })
+        return this.VideoRepository.findOne({ videoId })
     }
 
     async getVideos(): Promise<Video[]> {
-        return this.VideosRepository.find({});
+        return this.VideoRepository.find({});
     }
 
-    async createVideo (email: string, age: number): Promise<Video> {
-        return this.VideosRepository.create({
-            userId: uuidv4(),
-            email,
-            age,
-            favoriteFoods: []
+    async createVideo (VideoId: number, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
+        return this.VideoRepository.create({
+            VideoId : uuidv4(),
+            MovieName,
+            DirectorOfMovie,
+            NomberOfView,
+            Rating,
+            Views: 0,
         })
     }
 
-    async updateVideo(userId: string, videoUpdates: UpdateVideoDto): Promise<Video> {
-        return this.VideosRepository.findOneAndUpdate({ videoId }, videoUpdates);
+    async updateVideo(VideoId: number, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
+        return this.VideoRepository.findOneAndUpdate({ VideoId }, await this.updateVideo(VideoId, MovieName, DirectorOfMovie, NomberOfView, Rating));
+  
     }
 
 

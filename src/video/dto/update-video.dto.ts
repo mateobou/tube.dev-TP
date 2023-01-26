@@ -1,6 +1,7 @@
 export class UpdateVideoDto {
+    VideoId: number;
     MovieName: string;
-    Director: string;
-    Views: number;
+    DirectorOfMovie: string;
+    NomberOfView: number;
     Rating: number;
 }

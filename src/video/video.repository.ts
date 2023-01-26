@@ -8,7 +8,7 @@ import { FilterQuery } from 'mongoose';
 
 
 @Injectable()
-export class VideosRepository {
+export class VideoRepository {
     constructor ( @InjectModel(Video.name) private videoModel: Model<VideoDocument> ) {}
 
     async findOne(videosFilterQuery: FilterQuery<Video>): Promise<Video> {
@@ -24,7 +24,7 @@ export class VideosRepository {
         return newVideo.save()
     }
 
-    async findOneAndUpdate(videosFilterQuery: FilterQuery<Video>, user: Partial<Video>): Promise<Video> {
+    async findOneAndUpdate(videosFilterQuery: FilterQuery<Video>, video: Partial<Video>): Promise<Video> {
         return this.videoModel.findOneAndUpdate(videosFilterQuery, Video, { new: true });
     }
 }

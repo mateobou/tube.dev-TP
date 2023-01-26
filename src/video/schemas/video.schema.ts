@@ -9,13 +9,16 @@ export type VideoDocument = Video & Document;
 @Schema()
 export class Video {
   @Prop()
-  id: number;
+  VideoId: number;
 
   @Prop()
   MovieName: string;
 
   @Prop()
   DirectorOfMovie: string;
+
+  @Prop()
+  Views: number;
 
   @Prop()
   NomberOfView: number;
