@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 // Pour la partie vidéo
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { VideoModule } from './video/video.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -29,6 +30,8 @@ import { VideoModule } from './video/video.module';
       autoLoadEntities: true,
     }),
     VideoModule,
+    MongooseModule.forRoot('mongodb://localhost:27017/protube')
+  
   ],
   controllers: [AppController],
   providers: [AppService],

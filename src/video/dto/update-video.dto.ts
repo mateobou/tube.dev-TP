@@ -1,4 +1,4 @@
-export class CreateVideoDto {
+export class UpdateVideoDto {
     MovieName: string;
     Director: string;
     Views: number;
