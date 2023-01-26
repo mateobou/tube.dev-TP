@@ -1,5 +1,5 @@
 export class UpdateVideoDto {
-    VideoId: number;
+    VideoId: string;
     MovieName: string;
     DirectorOfMovie: string;
     NomberOfView: number;

@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Video, VideoDocument } from './schemas/video.schema';
 import { VideoRepository } from './video.repository';
-import { v4 as uuidv4 } from 'uuid';
-
 
 @Injectable()
 export class VideoService {
@@ -19,18 +17,17 @@ export class VideoService {
         return this.VideoRepository.find({});
     }
 
-    async createVideo (VideoId: number, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
+    async createVideo (VideoId: string, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
         return this.VideoRepository.create({
-            VideoId : uuidv4(),
+            VideoId,
             MovieName,
             DirectorOfMovie,
             NomberOfView,
             Rating,
-            Views: 0,
         })
     }
 
-    async updateVideo(VideoId: number, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
+    async updateVideo(VideoId: string, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
         return this.VideoRepository.findOneAndUpdate({ VideoId }, await this.updateVideo(VideoId, MovieName, DirectorOfMovie, NomberOfView, Rating));
   
     }

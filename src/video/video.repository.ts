@@ -18,8 +18,8 @@ export class VideoRepository {
         return this.videoModel.find(videosFilterQuery)
     }
 
-    async create(user: Video): Promise<Video> {
-        const newVideo = new this.videoModel(Video);
+    async create(video: Video): Promise<Video> {
+        const newVideo = new this.videoModel(video);
         return newVideo.save()
     }
 
