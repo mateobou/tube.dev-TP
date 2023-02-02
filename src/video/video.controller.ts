@@ -10,17 +10,8 @@ export class VideoController {
   constructor(private readonly videoService: VideoService) {}
 
 
-  @Get(': videoId')
-  async getUser(@Param('videoId') videoId: string): Promise<Video> {
-  return this.videoService.getVideoById(videoId);
-  }
 
   @Get()
-  async getVideos(): Promise<Video []> {
-  return this.videoService.getVideos();
-  }
-
-  @Post()
   async createVideo (@Body() createVideoDto: CreateVideoDto): Promise<Video> {
   return this.videoService.createVideo(
     createVideoDto.VideoId,
