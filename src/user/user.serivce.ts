@@ -18,7 +18,8 @@ export class UserService {
     return this.userRepository.find({});
   }
 
-  async createUser( //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit ! 
+  async createUser(
+    //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
     email: string,
     firstName: string,
     lastName: string,
