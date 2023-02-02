@@ -30,7 +30,7 @@ export class UsersController {
   }
   @Get('/login')
   async logUser(@Param('firstName') firstName: string) {
-    console.log(firstName)
+    console.log(firstName);
     return this.userService.getUserByFirstName(firstName);
   }
   @Patch(':userId')
