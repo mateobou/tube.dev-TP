@@ -16,11 +16,11 @@ export class UserService {
     return this.userRepository.find({});
   }
 
-  async createUser(
+  async createUser( //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit ! 
     email: string,
-    password: string,
     firstName: string,
     lastName: string,
+    password: string,
   ): Promise<User> {
     return this.userRepository.create({
       userId: uuidv4(),
