@@ -28,7 +28,11 @@ export class UsersController {
       createUserDto.password,
     );
   }
-
+  @Get('/login')
+  async logUser(@Param('firstName') firstName: string) {
+    console.log(firstName)
+    return this.userService.getUserByFirstName(firstName);
+  }
   @Patch(':userId')
   async updateUser(
     @Param('userId') userId: string,
