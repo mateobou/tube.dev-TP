@@ -25,7 +25,7 @@ export class VideoController {
   @Get('/:id')
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
-  async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res: Response) {
+  async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
     const videoPath = `assets/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -49,6 +49,7 @@ export class VideoController {
       const head = {
         'Content-Length': size,
       };
+      
       res.writeHead(HttpStatus.OK, head); //200
       createReadStream(videoPath).pipe(res);
     }
