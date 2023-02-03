@@ -3,9 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { UpdateUserdto } from './dto/update-user.dto';
 import { UserRepository } from './user.repository';
 import { User } from './schemas/user.schema';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
+  [x: string]: any;
   constructor(private readonly userRepository: UserRepository) {}
 
   async getUseById(userId: string): Promise<User> {
@@ -25,12 +27,16 @@ export class UserService {
     lastName: string,
     password: string,
   ): Promise<User> {
+    const hashedPassword = await bcrypt.hash(password, 10);
     return this.userRepository.create({
       userId: uuidv4(),
       email: email,
-      password: password,
+      password: hashedPassword,
       firstName: firstName,
       lastName: lastName,
+      validatePassword: function (password: string): Promise<boolean> {
+        throw new Error('Function not implemented.');
+      },
     });
   }
 
