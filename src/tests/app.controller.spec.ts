@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from '../app.controller';
 import { AppService } from '../app.service';
 
-
+/* test qui réussit si à la racine du site, est affiché 'Hello World!' */
 
 describe('AppController', () => {
   let appController: AppController;
