@@ -4,25 +4,26 @@
 2. Test de validation des champs d'entrée : tester si les entrées sont correctes et s'ils respectent les conditions définies pour chaque champ (pour first name, last name, email, password).
 3. Test de hashage de mot de passe : Vérifiez que le mot de passe est correctement haché avant de le stocker dans la base de données.
 4. Test de validation de la correspondance de mot de passe : Vérifiez que le mot de passe entré par l'utilisateur correspond au mot de passe stocké dans la base de données lors de la connexion.
+5. Verfiier user.name unique a chaque fois
+6. ? Test de longueur minimale du mot de passe : Vérifiez que le mot de passe a une longueur minimale définie pour assurer une sécurité suffisante. 
+7. ? Test de vérification des droits d'utilisateur : Vérifiez que les utilisateurs ne peuvent accéder qu'aux routes pour lesquelles ils ont les autorisations nécessaires. oui modification vidéo pas encore 
 
 ---
+Si le temps : 
+1. ? Test d'unicité de l'email : Vérifiez que l'adresse email n'est pas déjà utilisée par un autre utilisateur lors de la création de compte (si simple oui)
 
-1. ? Test d'unicité de l'email : Vérifiez que l'adresse email n'est pas déjà utilisée par un autre utilisateur lors de la création de compte
-2. ? Test de longueur minimale du mot de passe : Vérifiez que le mot de passe a une longueur minimale définie pour assurer une sécurité suffisante.
-3. ? Test de réinitialisation de mot de passe : Vérifiez que la réinitialisation du mot de passe fonctionne correctement et que le nouveau mot de passe est correctement hashé et stocké dans la base de données.
-4. ? Test de vérification des droits d'utilisateur : Vérifiez que les utilisateurs ne peuvent accéder qu'aux routes pour lesquelles ils ont les autorisations nécessaires.
-5. ? Test de protection contre les attaques par force brute : Vérifiez que les mesures de sécurité sont en place pour empêcher les attaques par force brute sur le système d'authentification.
+
 
 
 ## Pour notre feature video :
 
-1. Test de téléchargement de vidéo : Vérifiez que les utilisateurs peuvent télécharger correctement des vidéos sur le serveur.
-2. Test de lecture de vidéo : Vérifiez que les utilisateurs peuvent streamer correctement les vidéos téléchargées sur le site.
-3. Test de qualité de la vidéo : Vérifiez que la qualité de la vidéo est suffisante pour une lecture agréable pour les utilisateurs.
-4. Test de vitesse de lecture : Vérifiez que la vidéo est diffusée à une vitesse suffisante pour une lecture fluide pour les utilisateurs.
+1. Test de téléchargement de vidéo : Vérifiez que les utilisateurs peuvent télécharger correctement des vidéos sur le serveur. temps upload Max 3 min.
+2. Test de lecture de vidéo : Vérifiez que les utilisateurs peuvent streamer correctement les vidéos téléchargées sur le site. Tester avec VLC librairie pour tester le streaming
+3. Test de limitation de taille de fichier : <= 100 Megabit (Mo)Vérifiez que la taille maximale autorisée pour les vidéos téléchargées est respectée.
+4. Verifie avec requete Post si le fichier est bien dans la base de donnee et que ca ajouter bien un vue (un viosionage dans la BDD)
+5. Test de qualité de la vidéo : Vérifiez que la qualité de la vidéo est suffisante pour une lecture agréable pour les utilisateurs.
+6. Test de vitesse de lecture : Vérifiez que la vidéo est diffusée à une vitesse suffisante pour une lecture fluide pour les utilisateurs.
 
 ---
-
-1. ? Test de compatibilité du format de vidéo : Vérifiez que le système de streaming supporte les formats vidéo les plus courants et qu'il peut gérer correctement les erreurs de format.
-2. ? Test de limitation de taille de fichier : Vérifiez que la taille maximale autorisée pour les vidéos téléchargées est respectée.
-3. ? Test de protection contre le contenu malveillant : Vérifiez que le système de streaming peut détecter et empêcher la diffusion de contenu malveillant ou inapproprié.
+Si le temps : 
+1. Test de protection contre le contenu malveillant : Vérifiez que le système de streaming peut détecter et empêcher la diffusion de contenu malveillant ou inapproprié.
