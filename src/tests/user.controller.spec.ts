@@ -1,16 +1,16 @@
-import { AppController } from '../app.controller';
-import { AppService } from '../app.service';
+import { UserController } from '../user/app.controller';
+import { AppService } from '../user/app.service';
 
 /* test qui réussit si à la racine du site, est affiché 'Hello World!' */
 
 describe('AppController', () => {
-  let appController: AppController;
-  let appService: AppService;
+  let userController: UserController;
+  let userService: UserService;
 
 
 beforeEach(() => {
-  appService = new AppService();
-  appController = new AppController(appService);
+  userService = new UserService();
+  userController = new UserController(userService);
 });
 
 
