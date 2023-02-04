@@ -10,16 +10,20 @@ export class UserService {
   [x: string]: any;
   constructor(private readonly userRepository: UserRepository) {}
 
+  // Récupère un utilisateur en fonction de son identifiant
   async getUseById(userId: string): Promise<User> {
     return this.userRepository.findOne({ userId });
   }
+  // Récupère un utilisateur en fonction de son nom
   async getUserByFirstName(firstName: string): Promise<User> {
     return this.userRepository.findOneByName({ firstName });
   }
+  // Récupère tous les utilisateurs
   async getUser(): Promise<User[]> {
     return this.userRepository.find({});
   }
 
+  // Crée un utilisateur
   async createUser(
     //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
     email: string,

@@ -9,16 +9,19 @@ import { UserService } from './user.serivce';
 export class UsersController {
   constructor(private readonly userService: UserService) {}
 
+  // Récupère un utilisateur en fonction de son identifiant
   @Get('userId')
   async getUser(@Param('userId') userId: string): Promise<User> {
     return this.userService.getUseById(userId);
   }
 
+  // Récupère tous les utilisateurs
   @Get()
   async getUsers(): Promise<User[]> {
     return this.userService.getUser();
   }
 
+  // Crée un nouvel utilisateur
   @Post()
   async createUser(@Body() createUserDto: CreateUserdto): Promise<User> {
     return this.userService.createUser(
@@ -28,11 +31,15 @@ export class UsersController {
       createUserDto.password,
     );
   }
+
+  // Connexion d'un utilisateur en fonction de son prénom
   @Get('/login')
   async logUser(@Param('firstName') firstName: string) {
     console.log(firstName);
     return this.userService.getUserByFirstName(firstName);
   }
+
+  // Met à jour les informations d'un utilisateur
   @Patch(':userId')
   async updateUser(
     @Param('userId') userId: string,
