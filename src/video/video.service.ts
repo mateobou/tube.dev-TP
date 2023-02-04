@@ -33,5 +33,7 @@ export class VideoService {
   
     }
 
-
+    postVideo(): string {
+        return 'Hello World!';
+    }
 }

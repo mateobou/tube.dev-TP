@@ -4,19 +4,33 @@ import {
   Post,
   Body,
   Param,
-  Delete,
-  Put,
   Patch,
   Header,
   HttpStatus,
   Res,
-  Headers, 
+  Headers,
+  Req,
+  UseInterceptors,
+  UploadedFile,
+  ParseFilePipeBuilder, 
 } from '@nestjs/common';
+import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
 import { VideoService } from './video.service';
 import { Video } from './schemas/video.schema';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { statSync, createReadStream } from 'fs';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { SampleDto } from './dto/Sample.dto';
+
+@Injectable()
+export class FileSizeValidationPipe implements PipeTransform {
+  transform(value: any, metadata: ArgumentMetadata) {
+    // "value" is an object containing the file's attributes and metadata
+    const oneKb = 1000;
+    return value.size < oneKb;
+  }
+}
 
 @Controller('video')
 export class VideoController {
@@ -59,9 +73,61 @@ export class VideoController {
   async getVideos(): Promise<Video[]> {
     return this.videoService.getVideos();
   }
+  
+  @UseInterceptors(FileInterceptor('file'))
+  @Post('file')
+  uploadFile(
+    @Body() body: SampleDto,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    console.log("Le fichier a été uploadé : "+ file.size)
+    return {
+      body,
+      file: file.buffer.toString(),
+    };
+  }
 
-  @Post()
-  async createVideo(@Body() createVideoDto: CreateVideoDto): Promise<Video> {
+  @UseInterceptors(FileInterceptor('file'))
+  @Post('file/pass-validation')
+  uploadFileAndPassValidation(
+    @Body() body: SampleDto,
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'json',
+        })
+        .build({
+          fileIsRequired: false,
+        }),
+    )
+    file?: Express.Multer.File,
+  ) {
+    return {
+      body,
+      file: file?.buffer.toString(),
+    };
+  }
+
+  @UseInterceptors(FileInterceptor('file'))
+  @Post('file/fail-validation')
+  uploadFileAndFailValidation(
+    @Body() body: SampleDto,
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'jpg',
+        })
+        .build(),
+    )
+    file: Express.Multer.File,
+  ) {
+    return {
+      body,
+      file: file.buffer.toString(),
+    };
+  }
+  /*async createVideo(@Body() createVideoDto: CreateVideoDto, @Req() req): Promise<Video> {
+    console.log(req)
     return this.videoService.createVideo(
       createVideoDto.VideoId,
       createVideoDto.MovieName,
@@ -69,7 +135,7 @@ export class VideoController {
       createVideoDto.NomberOfView,
       createVideoDto.Rating,
     );
-  }
+  }*/
 
   @Patch(':VideoId')
   async updateVideo(@Body() updateVideoDto: UpdateVideoDto): Promise<Video> {
