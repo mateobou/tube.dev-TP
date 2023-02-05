@@ -3,9 +3,14 @@
 <head>
     <script src="video.ts"></script>
   <title>Protube</title>
+  <link rel="stylesheet" type="text/css" href="video.css">
 </head>
 <body>
   <h1>Protube</h1>
+  <div id="search-container">
+    <input type="text" placeholder="Rechercher une vidéo">
+    <button>Rechercher</button>
+  </div>
   <div id="video-container">
     <video id="video">
       <source src="http://localhost:3000/video/stream/1" type="video/mp4">
