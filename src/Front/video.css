@@ -71,3 +71,9 @@ video-container {
   justify-content: space-between;
   align-items: center;
 }
+#video-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  stroke: #fff;
+}
