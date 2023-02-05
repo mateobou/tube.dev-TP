@@ -4,25 +4,22 @@ import { Document, HydratedDocument } from 'mongoose';
 
 export type VideoDocument = Video & Document;
 
-
-
-
 @Schema()
 export class Video {
   @Prop()
   VideoId: string;
 
   @Prop()
-  MovieName: string;
-
-  @Prop()
-  DirectorOfMovie: string;
+  VideoName: string;
 
   @Prop()
   NomberOfView: number;
 
   @Prop()
   Rating: number;
+
+  @Prop()
+  UserId: string
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);

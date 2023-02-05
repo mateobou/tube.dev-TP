@@ -1,7 +1,4 @@
-export class UpdateVideoDto {
-    VideoId: string;
-    MovieName: string;
-    DirectorOfMovie: string;
-    NomberOfView: number;
-    Rating: number;
-}
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateVideoDto } from './create-video.dto';
+
+export class UpdateVideoDto extends PartialType(CreateVideoDto) {}

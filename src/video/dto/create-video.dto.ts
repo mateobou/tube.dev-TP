@@ -1,7 +1,10 @@
 export class CreateVideoDto {
+    static VideoId(VideoId: any, VideoName: any, DirectorOfMovie: any, NomberOfView: any, Rating: any) {
+      throw new Error('Method not implemented.');
+    }
     VideoId: string;
-    MovieName: string;
-    DirectorOfMovie: string;
-    NomberOfView: number;
-    Rating: number;
+    VideoName: string;
+    NumberOfView: number;
+    Rating:number;
+    UserId:string;
 }
