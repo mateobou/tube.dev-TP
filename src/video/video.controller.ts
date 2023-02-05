@@ -59,12 +59,11 @@ export class VideoController {
   @UseInterceptors(FileInterceptor('file'))
   @Post('file/pass-validation')
   uploadFileAndPassValidation(
-    @Body() body: SampleDto,
-    createVideoDto: CreateVideoDto,
+    @Body() body: CreateVideoDto,
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'mp4',
+          fileType: 'image/jpeg',
         })
         .addMaxSizeValidator({
           maxSize: 2000000
@@ -77,11 +76,10 @@ export class VideoController {
   ) {
     console.log("Le fichier a été uploadé : "+ file.size)
     this.videoService.createVideo(
-      createVideoDto.VideoId,
-      createVideoDto.VideoName,
-      createVideoDto.UserId,
-      createVideoDto.NumberOfView,
-      createVideoDto.Rating,
+      body.VideoName,
+      body.UserId,
+      file.originalname,
+      file.buffer.toString()
     );
     return {
       body,

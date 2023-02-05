@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateVideoDto } from './dto/create-video.dto';
+import { v4 as uuidv4 } from 'uuid';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import fs from 'fs'
 import { VideoRepository } from './video.repository';
@@ -10,16 +10,27 @@ export class VideoService {
     private readonly VideoRepository: VideoRepository ) {}
     async createVideo(
       //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
-      VideoId: string,
       VideoName: string,
       UserId:string,
-      NomberOfView: number,
-      Rating: number
+      name,
+      content
     ): Promise<Video> {
+      let id : string = uuidv4() 
+      console.log(id)
+      console.log(name)
+      fs.writeFile('./../stockage/videos/' +id+"/"+name,content,(err) => {
+        if (err)
+          console.log(err);
+        else {
+          console.log("File written successfully\n");
+          console.log("The written has the following contents:");
+          console.log(fs.readFileSync("books.txt", "utf8"));
+        }
+      })
       return this.VideoRepository.create({
-        VideoId: uuidv4(),
+        VideoId: id,
         VideoName: VideoName,
-        UserId: "",
+        UserId: UserId,
         NomberOfView: 0,
         Rating: 0
       });
@@ -87,8 +98,5 @@ async storeVideo(file){
     );
     user.updateOne({ avatar: imageData.data.url }).exec();*/
 }
-}
-function uuidv4(): string {
-  throw new Error('Function not implemented.');
 }
 
