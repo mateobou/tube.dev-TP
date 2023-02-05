@@ -1,7 +1,7 @@
 ## Pour notre feature user :
 
 1. ~~Requesting Permission pour le login~~
-2. Test de validation des champs d'entrée : tester si les entrées sont correctes et s'ils respectent les conditions définies pour chaque champ (pour first name, last name, email, password).
+2. ~~Test de validation des champs d'entrée : tester si les entrées sont correctes et s'ils respectent les conditions définies pour chaque champ (pour first name, last name, email, password).~~
 3. Test de hashage de mot de passe : Vérifiez que le mot de passe est correctement haché avant de le stocker dans la base de données.
 4. Test de validation de la correspondance de mot de passe : Vérifiez que le mot de passe entré par l'utilisateur correspond au mot de passe stocké dans la base de données lors de la connexion.
 5. Verfiier user.name unique a chaque fois
@@ -10,7 +10,7 @@
 
 ---
 Si le temps : 
-1. ? Test d'unicité de l'email : Vérifiez que l'adresse email n'est pas déjà utilisée par un autre utilisateur lors de la création de compte (si simple oui)
+1. Test d'unicité de l'email : Vérifiez que l'adresse email n'est pas déjà utilisée par un autre utilisateur lors de la création de compte (si simple oui)
 
 
 
