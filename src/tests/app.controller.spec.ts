@@ -1,53 +1,82 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { AuthModule } from '../user/auth/auth.module';
+import { UserRepository } from '../user/user.repository';
+import { JwtStrategy } from '../user/auth/local.strategy';
+import { User } from '../user/schemas/user.schema';
+import { INestApplication, UnauthorizedException } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UsersModule } from '../user/users.module';
 import { AppController } from '../app.controller';
 import { AppService } from '../app.service';
-import { AuthGuard } from '@nestjs/passport/dist/auth.guard';
-import { getModelToken } from '@nestjs/mongoose';
-import { UserRepository } from '../user/user.repository';
-import { User } from '../user/schemas/user.schema';
 
 describe('AppController', () => {
-  let appController: AppController;
-  let appService: AppService;
+  let app: INestApplication;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [
-        AppService,
-        // inject User model as a provider with the useValue property
-        {
-          provide: getModelToken(User.name),
-          useValue: User,
-        },
-        UserRepository,
+      imports: [
+        MongooseModule.forRoot(
+          'mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/?retryWrites=true&w=majority',
+        ),
+        UsersModule,
+        AuthModule,
       ],
+      controllers: [AppController],
+      providers: [AppService],
+    }).compile();
+
+    app = module.createNestApplication();
+    await app.init();
+  });
+
+  it('should be defined', () => {
+    expect(app).toBeDefined();
+  });
+});
+
+describe('AuthModule', () => {
+  let authModule: TestingModule;
+
+  beforeEach(async () => {
+    authModule = await Test.createTestingModule({
+      imports: [AuthModule],
     })
-      // override the AuthGuard with an empty object
-      .overrideGuard(AuthGuard)
-      .useValue({})
+      .overrideProvider(UserRepository)
+      .useValue({
+        findOne: jest.fn(),
+      })
       .compile();
-
-    // get instances of AppService and AppController from the testing module
-    appService = module.get<AppService>(AppService);
-    appController = module.get<AppController>(AppController);
   });
 
-  describe('getHello', () => {
-    it('should return "Hello World!"', () => {
-      // test that the returned value from getHello() is "Hello World!"
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('JwtStrategy', () => {
+    let jwtStrategy: JwtStrategy;
+    let userRepository;
+    beforeEach(async () => {
+      userRepository = authModule.get<UserRepository>(UserRepository);
+      jwtStrategy = authModule.get<JwtStrategy>(JwtStrategy);
     });
-  });
 
-  describe('login', () => {
-    it('should return req.user', async () => {
-      // create a request object with a user property set to "user"
-      const req = { user: 'user' };
-      // call the login() method on the AppController instance
-      const result = await appController.login(req as any);
-      // test that the result of the login() method is equal to "user"
-      expect(result).toBe('user');
+    describe('validate', () => {
+      it('validates and returns the user based on JWT payload', async () => {
+        const user = new User();
+        user.userId = '1';
+        user.email = 'test@example.com';
+
+        userRepository.findOne.mockResolvedValue(user);
+
+        const result = await jwtStrategy.validate({
+          sub: user.userId,
+          email: user.email,
+        });
+        expect(result).toEqual({ userId: user.userId, email: user.email });
+      });
+
+      it('throws an unauthorized exception if user cannot be found', async () => {
+        userRepository.findOne.mockResolvedValue(null);
+        await expect(
+          jwtStrategy.validate({ sub: 1, email: 'test@example.com' }),
+        ).rejects.toThrow(UnauthorizedException);
+      });
     });
   });
 });
