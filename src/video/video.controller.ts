@@ -22,7 +22,6 @@ import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { statSync, createReadStream } from 'fs';
-import { SampleDto } from './dto/Sample.dto';
 import { Video } from './schemas/video.schema';
 @Injectable()
 export class FileSizeValidationPipe implements PipeTransform {
