@@ -64,10 +64,10 @@ export class VideoController {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'mp4',
+          fileType: 'jpeg',
         })
         .addMaxSizeValidator({
-          maxSize: 2000
+          maxSize: 2000000
         })
         .build({
           fileIsRequired: false,
