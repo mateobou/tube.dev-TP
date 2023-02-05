@@ -1,4 +1,22 @@
-import { Controller, Get,Headers, Post, Body, Patch, Param, Delete , Injectable, PipeTransform, ArgumentMetadata, Header, HttpStatus, ParseFilePipeBuilder, Res, UploadedFile, UseInterceptors} from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Headers,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Injectable,
+  PipeTransform,
+  ArgumentMetadata,
+  Header,
+  HttpStatus,
+  ParseFilePipeBuilder,
+  Res,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
 import { VideoService } from './video.service';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
@@ -21,7 +39,11 @@ export class VideoController {
   @Get('/:id')
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
-  async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
+  async getStreamVideo(
+    @Param('id') id: string,
+    @Headers() headers,
+    @Res() res,
+  ) {
     const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -45,7 +67,7 @@ export class VideoController {
       const head = {
         'Content-Length': size,
       };
-      
+
       res.writeHead(HttpStatus.OK, head); //200
       createReadStream(videoPath).pipe(res);
     }
@@ -66,7 +88,7 @@ export class VideoController {
           fileType: 'image/jpeg',
         })
         .addMaxSizeValidator({
-          maxSize: 2000000
+          maxSize: 2000000,
         })
         .build({
           fileIsRequired: false,
@@ -74,19 +96,18 @@ export class VideoController {
     )
     file?: Express.Multer.File,
   ) {
-    console.log("Le fichier a été uploadé : "+ file.size)
+    console.log('Le fichier a été uploadé : ' + file.size);
     this.videoService.createVideo(
       body.VideoName,
       body.UserId,
       file.originalname,
-      file.buffer
+      file.buffer,
     );
     return {
       body,
       file: file?.buffer.toString(),
     };
   }
-
 
   @Get()
   findAll() {
@@ -108,18 +129,3 @@ export class VideoController {
     return this.videoService.remove(+id);
   }
 }
-
-
-/* Début test unitaire sur vérification de la taille du fichier uploadé max 3  */
-
-@Post('upload-video')
-uploadVideo(): number {
-const startTime = Date.now();
-
-const endTime = Date.now();
-const uploadTime = endTime - startTime;
-return uploadTime;
-
-}
-
-/* Fin test unitaire sur vérification de la taille du fichier uploadé max 3  */
