@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <script src="video.ts"></script>
@@ -6,10 +5,36 @@
   <link rel="stylesheet" type="text/css" href="video.css">
 </head>
 <body>
-  <h1>Protube</h1>
+  
   <div id="search-container">
     <input type="text" placeholder="Rechercher une vidéo">
     <button>Rechercher</button>
+  </div>
+  <div class="filter-container" id="filter-container">
+    <form>
+      <label for="sort-by">Trier par :</label>
+      <select id="sort-by" name="sort-by">
+        <option value="recent">Récent</option>
+        <option value="popular">Populaire</option>
+        <option value="trending">Tendance</option>
+      </select>
+      <br><br>
+      <label for="category">Catégorie :</label>
+      <select id="category" name="category">
+        <option value="all">Toutes</option>
+        <option value="music">Musique</option>
+        <option value="gaming">Gaming</option>
+        <option value="education">Education</option>
+      </select>
+      <br><br>
+      <label for="duration">Durée :</label>
+      <select id="duration" name="duration">
+        <option value="all">Toutes</option>
+        <option value="short">Courte</option>
+        <option value="medium">Moyenne</option>
+        <option value="long">Longue</option>
+      </select>
+    </form>
   </div>
   <div id="video-container">
     <video id="video">
