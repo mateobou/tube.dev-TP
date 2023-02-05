@@ -115,7 +115,6 @@ export class VideoController {
 @Post('upload-video')
 uploadVideo(): number {
 const startTime = Date.now();
-
 const endTime = Date.now();
 const uploadTime = endTime - startTime;
 return uploadTime;
