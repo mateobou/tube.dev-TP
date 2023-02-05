@@ -1,0 +1,503 @@
+➜  tube.devjkkk git:(feature/VLC_test) npm install vlc
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@angular-devkit/core@14.2.2',
+npm WARN EBADENGINE   required: {
+npm WARN EBADENGINE     node: '^14.15.0 || >=16.10.0',
+npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
+npm WARN EBADENGINE     yarn: '>= 1.13.0'
+npm WARN EBADENGINE   },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@angular-devkit/schematics@14.2.2',
+npm WARN EBADENGINE   required: {
+npm WARN EBADENGINE     node: '^14.15.0 || >=16.10.0',
+npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
+npm WARN EBADENGINE     yarn: '>= 1.13.0'
+npm WARN EBADENGINE   },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@angular-devkit/schematics-cli@14.2.2',
+npm WARN EBADENGINE   required: {
+npm WARN EBADENGINE     node: '^14.15.0 || >=16.10.0',
+npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
+npm WARN EBADENGINE     yarn: '>= 1.13.0'
+npm WARN EBADENGINE   },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/console@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/core@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/environment@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/expect@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/expect-utils@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/fake-timers@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/globals@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/reporters@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/schemas@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/source-map@28.1.2',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/test-result@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/test-sequencer@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/transform@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@jest/types@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@angular-devkit/core@14.2.1',
+npm WARN EBADENGINE   required: {
+npm WARN EBADENGINE     node: '^14.15.0 || >=16.10.0',
+npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
+npm WARN EBADENGINE     yarn: '>= 1.13.0'
+npm WARN EBADENGINE   },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@angular-devkit/schematics@14.2.1',
+npm WARN EBADENGINE   required: {
+npm WARN EBADENGINE     node: '^14.15.0 || >=16.10.0',
+npm WARN EBADENGINE     npm: '^6.11.0 || ^7.5.6 || >=8.0.0',
+npm WARN EBADENGINE     yarn: '>= 1.13.0'
+npm WARN EBADENGINE   },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'babel-jest@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'babel-plugin-jest-hoist@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'babel-preset-jest@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'diff-sequences@28.1.1',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'expect@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-changed-files@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-circus@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-cli@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-config@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-diff@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-docblock@28.1.1',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-each@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-environment-node@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-get-type@28.0.2',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-haste-map@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-leak-detector@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-matcher-utils@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-message-util@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-mock@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-regex-util@28.0.2',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-resolve@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-resolve-dependencies@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-runner@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-runtime@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-snapshot@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-util@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-validate@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-watcher@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'jest-worker@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'pretty-format@28.1.3',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'ts-jest@28.0.8',
+npm WARN EBADENGINE   required: { node: '^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.3.0', npm: '7.15.1' }
+npm WARN EBADENGINE }
+npm ERR! code 1
+npm ERR! path /Users/ludovic/Documents/GitHub/tube.devjkkk/node_modules/ref
+npm ERR! command failed
+npm ERR! command sh -c node-gyp rebuild
+npm ERR! CXX(target) Release/obj.target/binding/src/binding.o
+npm ERR! gyp info it worked if it ends with ok
+npm ERR! gyp info using node-gyp@7.1.2
+npm ERR! gyp info using node@16.3.0 | darwin | x64
+npm ERR! gyp info find Python using Python version 3.10.7 found at "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3"
+npm ERR! (node:57599) [DEP0150] DeprecationWarning: Setting process.config is deprecated. In the future the property will be read-only.
+npm ERR! (Use `node --trace-deprecation ...` to show where the warning was created)
+npm ERR! gyp info spawn /Library/Frameworks/Python.framework/Versions/3.10/bin/python3
+npm ERR! gyp info spawn args [
+npm ERR! gyp info spawn args   '/usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+npm ERR! gyp info spawn args   'binding.gyp',
+npm ERR! gyp info spawn args   '-f',
+npm ERR! gyp info spawn args   'make',
+npm ERR! gyp info spawn args   '-I',
+npm ERR! gyp info spawn args   '/Users/ludovic/Documents/GitHub/tube.devjkkk/node_modules/ref/build/config.gypi',
+npm ERR! gyp info spawn args   '-I',
+npm ERR! gyp info spawn args   '/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+npm ERR! gyp info spawn args   '-I',
+npm ERR! gyp info spawn args   '/Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/common.gypi',
+npm ERR! gyp info spawn args   '-Dlibrary=shared_library',
+npm ERR! gyp info spawn args   '-Dvisibility=default',
+npm ERR! gyp info spawn args   '-Dnode_root_dir=/Users/ludovic/Library/Caches/node-gyp/16.3.0',
+npm ERR! gyp info spawn args   '-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp',
+npm ERR! gyp info spawn args   '-Dnode_lib_file=/Users/ludovic/Library/Caches/node-gyp/16.3.0/<(target_arch)/node.lib',
+npm ERR! gyp info spawn args   '-Dmodule_root_dir=/Users/ludovic/Documents/GitHub/tube.devjkkk/node_modules/ref',
+npm ERR! gyp info spawn args   '-Dnode_engine=v8',
+npm ERR! gyp info spawn args   '--depth=.',
+npm ERR! gyp info spawn args   '--no-parallel',
+npm ERR! gyp info spawn args   '--generator-output',
+npm ERR! gyp info spawn args   'build',
+npm ERR! gyp info spawn args   '-Goutput_dir=.'
+npm ERR! gyp info spawn args ]
+npm ERR! gyp info spawn make
+npm ERR! gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+npm ERR! ../src/binding.cc:222:43: error: too few arguments to function call, single argument 'isolate' was not specified
+npm ERR!   bool persistent = info[3]->BooleanValue();
+npm ERR!                     ~~~~~~~~~~~~~~~~~~~~~ ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3067:8: note: 'BooleanValue' declared here
+npm ERR!   bool BooleanValue(Isolate* isolate) const;
+npm ERR!        ^
+npm ERR! ../src/binding.cc:253:38: error: too few arguments to function call, single argument 'context' was not specified
+npm ERR!   size_t size = info[2]->Uint32Value();
+npm ERR!                 ~~~~~~~~~~~~~~~~~~~~ ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3075:41: note: 'Uint32Value' declared here
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<uint32_t> Uint32Value(
+npm ERR!                                         ^
+npm ERR! ../src/binding.cc:253:10: error: no viable conversion from 'Maybe<uint32_t>' (aka 'Maybe<unsigned int>') to 'size_t' (aka 'unsigned long')
+npm ERR!   size_t size = info[2]->Uint32Value();
+npm ERR!          ^      ~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:360:23: error: no matching constructor for initialization of 'String::Utf8Value'
+npm ERR!     String::Utf8Value _str(in);
+npm ERR!                       ^    ~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3554:5: note: candidate constructor not viable: no known conversion from 'Local<v8::Value>' to 'const v8::String::Utf8Value' for 1st argument
+npm ERR!     Utf8Value(const Utf8Value&) = delete;
+npm ERR!     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3547:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+npm ERR!     Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+npm ERR!     ^
+npm ERR! ../src/binding.cc:447:23: error: no matching constructor for initialization of 'String::Utf8Value'
+npm ERR!     String::Utf8Value _str(in);
+npm ERR!                       ^    ~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3554:5: note: candidate constructor not viable: no known conversion from 'Local<v8::Value>' to 'const v8::String::Utf8Value' for 1st argument
+npm ERR!     Utf8Value(const Utf8Value&) = delete;
+npm ERR!     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3547:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+npm ERR!     Utf8Value(Isolate* isolate, Local<v8::Value> obj);
+npm ERR!     ^
+npm ERR! ../src/binding.cc:521:38: error: too few arguments to function call, single argument 'context' was not specified
+npm ERR!   size_t size = info[1]->Uint32Value();
+npm ERR!                 ~~~~~~~~~~~~~~~~~~~~ ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3075:41: note: 'Uint32Value' declared here
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<uint32_t> Uint32Value(
+npm ERR!                                         ^
+npm ERR! ../src/binding.cc:521:10: error: no viable conversion from 'Maybe<uint32_t>' (aka 'Maybe<unsigned int>') to 'size_t' (aka 'unsigned long')
+npm ERR!   size_t size = info[1]->Uint32Value();
+npm ERR!          ^      ~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:550:44: error: too few arguments to function call, single argument 'context' was not specified
+npm ERR!   uint32_t numZeros = info[1]->Uint32Value();
+npm ERR!                       ~~~~~~~~~~~~~~~~~~~~ ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3075:41: note: 'Uint32Value' declared here
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<uint32_t> Uint32Value(
+npm ERR!                                         ^
+npm ERR! ../src/binding.cc:550:12: error: no viable conversion from 'Maybe<uint32_t>' (aka 'Maybe<unsigned int>') to 'uint32_t' (aka 'unsigned int')
+npm ERR!   uint32_t numZeros = info[1]->Uint32Value();
+npm ERR!            ^          ~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:582:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(int8, int8_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:583:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(uint8, uint8_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:584:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(int16, int16_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:585:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(uint16, uint16_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:586:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(int32, int32_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:587:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(uint32, uint32_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:588:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(int64, int64_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:589:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(uint64, uint64_t);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:590:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(float, float);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! ../src/binding.cc:591:3: error: no matching member function for call to 'Set'
+npm ERR!   SET_SIZEOF(double, double);
+npm ERR!   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! ../src/binding.cc:581:9: note: expanded from macro 'SET_SIZEOF'
+npm ERR!   smap->Set(Nan::New<v8::String>( #name ).ToLocalChecked(), Nan::New<v8::Uint32>(static_cast<uint32_t>(sizeof(type))));
+npm ERR!   ~~~~~~^~~
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3926:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+npm ERR!                                     ^
+npm ERR! /Users/ludovic/Library/Caches/node-gyp/16.3.0/include/node/v8.h:3929:37: note: candidate function not viable: requires 3 arguments, but 2 were provided
+npm ERR!   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+npm ERR!                                     ^
+npm ERR! fatal error: too many errors emitted, stopping now [-ferror-limit=]
+npm ERR! 20 errors generated.
+npm ERR! make: *** [Release/obj.target/binding/src/binding.o] Error 1
+npm ERR! gyp ERR! build error 
+npm ERR! gyp ERR! stack Error: `make` failed with exit code: 2
+npm ERR! gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+npm ERR! gyp ERR! stack     at ChildProcess.emit (node:events:394:28)
+npm ERR! gyp ERR! stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12)
+npm ERR! gyp ERR! System Darwin 22.1.0
+npm ERR! gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+npm ERR! gyp ERR! cwd /Users/ludovic/Documents/GitHub/tube.devjkkk/node_modules/ref
+npm ERR! gyp ERR! node -v v16.3.0
+npm ERR! gyp ERR! node-gyp -v v7.1.2
+npm ERR! gyp ERR! not ok
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/ludovic/.npm/_logs/2023-02-05T17_09_52_751Z-debug.log
+➜  tube.devjkkk git:(feature/VLC_test) 
