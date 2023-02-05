@@ -1,7 +1,7 @@
 ~~Rayé~~ : test fait et validé
 ~Entouré accolade environ égale~ : test en cours écrit mais ne marche pas encore
 Rien : test pas encore fait
-
+Si le temps : test pas encore fait mais si le temps on le fait
 
 
 ## Pour notre feature user :
@@ -10,7 +10,6 @@ Rien : test pas encore fait
 2. ~Test de validation des champs d'entrée : tester si les entrées sont correctes et s'ils respectent les conditions définies pour chaque champ (pour first name, last name, email, password).~
 3. ~Test de hashage de mot de passe : Vérifiez que le mot de passe est correctement haché avant de le stocker dans la base de données.Vérifiez que le mot de passe entré par l'utilisateur correspond au mot de passe stocké dans la base de données lors de la connexion. ~
 4. ~Verfiier user.name unique a chaque fois~
-
 ---
 Si le temps : 
 1. Test d'unicité de l'email : Vérifiez que l'adresse email n'est pas déjà utilisée par un autre utilisateur lors de la création de compte (si simple oui)
@@ -22,12 +21,11 @@ Si le temps :
 ## Pour notre feature video :
 
 1. ~Test de téléchargement de vidéo : Vérifiez que les utilisateurs peuvent télécharger correctement des vidéos sur le serveur. temps upload Max 3 min.~
-2. Test de lecture de vidéo : Vérifiez que les utilisateurs peuvent streamer correctement les vidéos téléchargées sur le site. Tester avec VLC librairie pour tester le streaming
-3. Test de limitation de taille de fichier : <= 100 Megabit (Mo)Vérifiez que la taille maximale autorisée pour les vidéos téléchargées est respectée.
+2. Test de limitation de taille de fichier : <= 100 Megabit (Mo)Vérifiez que la taille maximale autorisée pour les vidéos téléchargées est respectée.
+3. Test de lecture de vidéo : Vérifiez que les utilisateurs peuvent streamer correctement les vidéos téléchargées sur le site. Tester avec VLC librairie pour tester le streaming
 4. Verifie avec requete Post si le fichier est bien dans la base de donnee et que ca ajouter bien un vue (un viosionage dans la BDD)
-5. Test de qualité de la vidéo : Vérifiez que la qualité de la vidéo est suffisante pour une lecture agréable pour les utilisateurs.
-6. Test de vitesse de lecture : Vérifiez que la vidéo est diffusée à une vitesse suffisante pour une lecture fluide pour les utilisateurs.
-
 ---
 Si le temps : 
 1. Test de protection contre le contenu malveillant : Vérifiez que le système de streaming peut détecter et empêcher la diffusion de contenu malveillant ou inapproprié.
+2. Test de qualité de la vidéo : Vérifiez que la qualité de la vidéo est suffisante pour une lecture agréable pour les utilisateurs.
+3. Test de vitesse de lecture : Vérifiez que la vidéo est diffusée à une vitesse suffisante pour une lecture fluide pour les utilisateurs.
