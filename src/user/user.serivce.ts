@@ -21,7 +21,7 @@ export class UserService {
   async createUser(
     //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
     email: string,
-    firstName: string,
+    username: string,
     lastName: string,
     password: string,
   ): Promise<User> {
@@ -29,7 +29,7 @@ export class UserService {
       userId: uuidv4(),
       email: email,
       password: password,
-      firstName: firstName,
+      username: username,
       lastName: lastName,
     });
   }

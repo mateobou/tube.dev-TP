@@ -8,7 +8,7 @@ import { UserService } from './user.serivce';
 @Controller('users')
 export class UsersController {
   constructor(private readonly userService: UserService) {}
-
+  
   @Get('userId')
   async getUser(@Param('userId') userId: string): Promise<User> {
     return this.userService.getUseById(userId);
@@ -23,7 +23,7 @@ export class UsersController {
   async createUser(@Body() createUserDto: CreateUserdto): Promise<User> {
     return this.userService.createUser(
       createUserDto.email,
-      createUserDto.firstName,
+      createUserDto.username,
       createUserDto.lastName,
       createUserDto.password,
     );

@@ -8,7 +8,7 @@ export class User {
   @Prop()
   userId: string;
   @Prop()
-  firstName: string;
+  username: string;
   @Prop()
   lastName: string;
   @Prop()
