@@ -1,3 +1,9 @@
+~~Rayé~~ : test fait et validé
+~Entouré accolade environ égale~ : test en cours écrit mais ne marche pas encore
+Rien : test pas encore fait
+
+
+
 ## Pour notre feature user :
 
 1. ~~Requesting Permission pour le login~~
@@ -15,7 +21,7 @@ Si le temps :
 
 ## Pour notre feature video :
 
-1. Test de téléchargement de vidéo : Vérifiez que les utilisateurs peuvent télécharger correctement des vidéos sur le serveur. temps upload Max 3 min.
+1. ~Test de téléchargement de vidéo : Vérifiez que les utilisateurs peuvent télécharger correctement des vidéos sur le serveur. temps upload Max 3 min.~
 2. Test de lecture de vidéo : Vérifiez que les utilisateurs peuvent streamer correctement les vidéos téléchargées sur le site. Tester avec VLC librairie pour tester le streaming
 3. Test de limitation de taille de fichier : <= 100 Megabit (Mo)Vérifiez que la taille maximale autorisée pour les vidéos téléchargées est respectée.
 4. Verifie avec requete Post si le fichier est bien dans la base de donnee et que ca ajouter bien un vue (un viosionage dans la BDD)
