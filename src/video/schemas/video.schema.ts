@@ -1,11 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, HydratedDocument } from 'mongoose';
-
+import { Document } from 'mongoose';
 
 export type VideoDocument = Video & Document;
-
-
-
 
 @Schema()
 export class Video {
