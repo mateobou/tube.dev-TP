@@ -64,7 +64,7 @@ export class VideoController {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'jpeg',
+          fileType: 'mp4',
         })
         .addMaxSizeValidator({
           maxSize: 2000000
@@ -88,10 +88,7 @@ export class VideoController {
       file: file?.buffer.toString(),
     };
   }
-  @Post()
-  create(@Body() createVideoDto: CreateVideoDto) {
-    return this.videoService.create(createVideoDto);
-  }
+
 
   @Get()
   findAll() {

@@ -20,8 +20,9 @@ export class VideoRepository {
 
     async create(video: Video): Promise<Video> {
         const newVideo = new this.videoModel(video);
-        return newVideo.save()
-    }
+        console.log(video);
+        return newVideo.save();
+      }
 
     async findOneAndUpdate(videosFilterQuery: FilterQuery<Video>, video: Partial<Video>): Promise<Video> {
         return this.videoModel.findOneAndUpdate(videosFilterQuery, Video, { new: true });

@@ -8,9 +8,22 @@ import { Video } from './schemas/video.schema';
 export class VideoService {
   constructor (
     private readonly VideoRepository: VideoRepository ) {}
-  create(createVideoDto: CreateVideoDto) {
-    return 'This action adds a new video';
-  }
+    async createVideo(
+      //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
+      VideoId: string,
+      VideoName: string,
+      UserId:string,
+      NomberOfView: number,
+      Rating: number
+    ): Promise<Video> {
+      return this.VideoRepository.create({
+        VideoId: uuidv4(),
+        VideoName: VideoName,
+        UserId: "",
+        NomberOfView: 0,
+        Rating: 0
+      });
+    }
 
   findAll() {
     return `This action returns all video`;
@@ -33,16 +46,6 @@ export class VideoService {
 
 async getVideos(): Promise<Video[]> {
     return this.VideoRepository.find({});
-}
-
-async createVideo (VideoId: string, VideoName: string, Path: string, NomberOfView: number, Rating: number): Promise<Video> {
-    return this.VideoRepository.create({
-        VideoId,
-        VideoName,
-        NomberOfView,
-        Rating,
-        UserId: '',
-    })
 }
 
 async updateVideo(VideoId: string, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
@@ -85,3 +88,7 @@ async storeVideo(file){
     user.updateOne({ avatar: imageData.data.url }).exec();*/
 }
 }
+function uuidv4(): string {
+  throw new Error('Function not implemented.');
+}
+
