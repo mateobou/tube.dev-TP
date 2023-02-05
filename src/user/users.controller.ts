@@ -92,7 +92,7 @@ export class UsersController {
 
   async validateUsername(username: string) {
     const existingUser = await this.userService.findOne({ username });
-    if (existingUser) {
+    if (existingUser!= null||undefined) {
       throw new BadRequestException('username existe déjà');
     }
     return username;

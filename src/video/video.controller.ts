@@ -109,16 +109,3 @@ export class VideoController {
   }
 }
 
-
-/* Début test unitaire sur vérification de la taille du fichier uploadé max 3  */
-
-@Post('upload-video')
-uploadVideo(): number {
-const startTime = Date.now();
-const endTime = Date.now();
-const uploadTime = endTime - startTime;
-return uploadTime;
-
-}
-
-/* Fin test unitaire sur vérification de la taille du fichier uploadé max 3  */

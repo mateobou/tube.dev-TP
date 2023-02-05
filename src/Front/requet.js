@@ -4,7 +4,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
   var xhr = new XMLHttpRequest(); // crée une nouvelle requête HTTP
   xhr.open('POST', 'http://localhost:3000/users'); // définit le type de requête et l'URL de destination
   xhr.send({
-    firstName: formData.firstName,
+    username: formData.username,
     lastName: formData.lastName,
     password: formData.password,
     email: formData.email,
