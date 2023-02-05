@@ -28,6 +28,60 @@ export class UsersController {
       createUserDto.password,
     );
   }
+
+  
+  /* Début tests unitaires */
+  @Post()
+  validateFirstName(firstName: string) {
+    if (typeof firstName !== 'string') {
+      throw new Error('firstName doit être une chaîne de caractère');
+    }
+    if (!firstName.trim()) {
+      throw new Error('firstName ne doit pas être vide');
+    }
+
+    return firstName;
+  }
+
+  @Post()
+  validateLastName(lastName: string) {
+    if (typeof lastName !== 'string') {
+      throw new Error('lastName doit être une chaîne de caractère');
+    }
+    if (!lastName.trim()) {
+      throw new Error('lastName ne doit pas être vide');
+    }
+
+    return lastName;
+  }
+
+  @Post()
+  validateEmail(email: string) {
+    if (typeof email !== 'string') {
+      throw new Error('email doit être une chaîne de caractère');
+    }
+    if (!email.trim()) {
+      throw new Error('email ne doit pas être vide');
+    }
+
+    return email;
+  }
+
+  @Post()
+  validatePassword(password: string) {
+    if (typeof password !== 'string') {
+      throw new Error('password doit être une chaîne de caractère');
+    }
+    if (!password.trim()) {
+      throw new Error('password ne doit pas être vide');
+    }
+
+    return password;
+  }
+
+  /* Fin tests unitaires */
+
+
   @Get('/login')
   async logUser(@Param('firstName') firstName: string) {
     console.log(firstName);
