@@ -32,15 +32,15 @@ export class UsersController {
   
   /* Début tests unitaires type rentré BDD user sont identiques */
   @Post()
-  validateFirstName(firstName: string) {
-    if (typeof firstName !== 'string') {
-      throw new Error('firstName doit être une chaîne de caractère');
+  validateusername(username: string) {
+    if (typeof username !== 'string') {
+      throw new Error('username doit être une chaîne de caractère');
     }
-    if (!firstName.trim()) {
-      throw new Error('firstName ne doit pas être vide');
+    if (!username.trim()) {
+      throw new Error('username ne doit pas être vide');
     }
 
-    return firstName;
+    return username;
   }
 
   @Post()
@@ -83,23 +83,11 @@ export class UsersController {
 
 
 
-  /* Début test user.Name rentré dans BDD est unique */
-
-  async validateUsername(firstName: string) {
-    const existingUser = await this.userService.findOne({ firstName });
-    if (existingUser) {
-    throw new BadRequestException('firstName existe déjà');
-    }
-    return firstName;
-    }
-
-  /* Fin test user.Name rentré dans BDD est unique */
-
 
   @Get('/login')
-  async logUser(@Param('firstName') firstName: string) {
-    console.log(firstName);
-    return this.userService.getUserByFirstName(firstName);
+  async logUser(@Param('username') username: string) {
+    console.log(username);
+    return this.userService.getUserByusername(username);
   }
   @Patch(':userId')
   async updateUser(
