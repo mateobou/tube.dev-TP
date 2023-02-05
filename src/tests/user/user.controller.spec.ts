@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { userController } from './user/user.controller';
+import { userController } from '../../user/user.controller';
 
 
 /* Ce test vérifie que les données entrées par l'utilisateur pour se connecter sont du bon type. Dans cette situation, il y a 

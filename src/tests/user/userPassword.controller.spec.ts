@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import * as jwt from 'jsonwebtoken';
-import { UserService } from '../user/user.service';
-import { AuthModule } from '../user/auth.module';
+import { UserService } from '../../user/user.service';
+import { AuthModule } from '../../user/auth.module';
 
 /* Ce test vérifie que le mot de passe entré par l'utilisateur est bien haché et stocké dans la base de données correctement */
 

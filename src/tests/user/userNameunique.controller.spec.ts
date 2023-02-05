@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserController } from '../user/user.controller';
-import { UserService } from '../user/user.service';
+import { UserController } from '../../user/user.controller';
+import { UserService } from '../../user/user.service';
 
 /* test unitaire qiui véridié que le nom d'utilisateur enregistré dans la base de données est unique */
 
