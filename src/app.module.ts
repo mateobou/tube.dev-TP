@@ -13,7 +13,7 @@ import { VideoModule } from './video/video.module';
     ),
     UsersModule,
     AuthModule,
-    VideoModule
+    VideoModule,
     //MongooseModule.forRoot('mongodb+srv://usertest:test@cluster0.m4mrrwq.mongodb.net/test')
   ],
   controllers: [AppController],

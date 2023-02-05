@@ -1,4 +1,3 @@
-
 export class SampleDto {
-    name: string;
-  }
+  name: string;
+}

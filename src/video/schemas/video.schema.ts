@@ -18,10 +18,10 @@ export class Video {
   Rating: number;
 
   @Prop()
-  UserId: string
-  
+  UserId: string;
+
   @Prop()
-  Path: string
+  Path: string;
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);
