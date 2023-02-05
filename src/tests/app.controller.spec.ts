@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthModule } from '../user/auth/auth.module';
 import { UserRepository } from '../user/user.repository';
-import { JwtStrategy } from '../user/auth/local.strategy';
+import { JwtStrategy } from '../user/auth/jwt.strategy';
 import { User } from '../user/schemas/user.schema';
 import { INestApplication, UnauthorizedException } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
