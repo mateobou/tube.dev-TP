@@ -9,7 +9,7 @@ export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   async getUseById(userId: string): Promise<User> {
-    return this.userRepository.findOne({ userId });
+    return this.userRepository.findOne({userId});
   }
   async getUserByFirstName(firstName: string): Promise<User> {
     return this.userRepository.findOneByName({ firstName });

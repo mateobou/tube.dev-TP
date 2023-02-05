@@ -73,19 +73,6 @@ export class VideoController {
   async getVideos(): Promise<Video[]> {
     return this.videoService.getVideos();
   }
-  
-  @UseInterceptors(FileInterceptor('file'))
-  @Post('file')
-  uploadFile(
-    @Body() body: SampleDto,
-    @UploadedFile() file: Express.Multer.File,
-  ) {
-    console.log("Le fichier a été uploadé : "+ file.size)
-    return {
-      body,
-      file: file.buffer.toString(),
-    };
-  }
 
   @UseInterceptors(FileInterceptor('file'))
   @Post('file/pass-validation')
@@ -94,7 +81,10 @@ export class VideoController {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'json',
+          fileType: 'mp4',
+        })
+        .addMaxSizeValidator({
+          maxSize: 2000
         })
         .build({
           fileIsRequired: false,
@@ -102,30 +92,15 @@ export class VideoController {
     )
     file?: Express.Multer.File,
   ) {
+    console.log("Le fichier a été uploadé : "+ file.size)
     return {
       body,
       file: file?.buffer.toString(),
     };
   }
 
-  @UseInterceptors(FileInterceptor('file'))
-  @Post('file/fail-validation')
-  uploadFileAndFailValidation(
-    @Body() body: SampleDto,
-    @UploadedFile(
-      new ParseFilePipeBuilder()
-        .addFileTypeValidator({
-          fileType: 'jpg',
-        })
-        .build(),
-    )
-    file: Express.Multer.File,
-  ) {
-    return {
-      body,
-      file: file.buffer.toString(),
-    };
-  }
+  
+  
   /*async createVideo(@Body() createVideoDto: CreateVideoDto, @Req() req): Promise<Video> {
     console.log(req)
     return this.videoService.createVideo(

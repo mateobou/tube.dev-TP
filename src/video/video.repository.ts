@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Video, VideoDocument } from './schemas/video.schema';
 import { FilterQuery } from 'mongoose';
-
+import fs from "fs";
 
 
 @Injectable()
@@ -25,5 +25,8 @@ export class VideoRepository {
 
     async findOneAndUpdate(videosFilterQuery: FilterQuery<Video>, video: Partial<Video>): Promise<Video> {
         return this.videoModel.findOneAndUpdate(videosFilterQuery, Video, { new: true });
+    }
+    async createVideoFile(){
+        
     }
 }
