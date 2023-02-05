@@ -8,8 +8,8 @@
 <body>
   <header>
     <div id="search-container">
-      <input type="text" placeholder="Rechercher une vidéo">
-      <button>Rechercher</button>
+      <input type="text" id="search-input" placeholder="Rechercher une vidéo">
+      <button id="search-button">Rechercher</button>
     </div>
   </header>
   <main>
@@ -47,12 +47,21 @@
       </div>
     </aside>
     <div id="video-container">
-      <video id="video">
-        <source src="http://localhost:3000/video/stream/1" type="video/mp4">
       <video id="video" controls="true" autoplay="true">
         <source src="http://localhost:3000/video/20224b70-8353-4b91-a80a-e676033dd635" type="video/mp4" >
       </video>
     </div>
   </main>
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+    const videoContainer = document.getElementById("video-container");
+    const video = document.getElementById("video");
+
+    searchButton.addEventListener("click", () => {
+      const searchTerm = searchInput.value;
+      video.src = `http://localhost:3000/video/stream/${searchTerm}`;
+    });
+  </script>
 </body>
 </html>
