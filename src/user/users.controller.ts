@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, BadRequestException } from '@nestjs/common';
 import { CreateUserdto } from './dto/create-user.dto';
 import { UpdateUserdto } from './dto/update-user.dto';
 
@@ -30,7 +30,7 @@ export class UsersController {
   }
 
   
-  /* Début tests unitaires */
+  /* Début tests unitaires type rentré BDD user sont identiques */
   @Post()
   validateFirstName(firstName: string) {
     if (typeof firstName !== 'string') {
@@ -79,7 +79,21 @@ export class UsersController {
     return password;
   }
 
-  /* Fin tests unitaires */
+  /* Fin tests unitaires type rentré BDD user sont identiques */
+
+
+
+  /* Début test user.Name rentré dans BDD est unique */
+
+  async validateUsername(firstName: string) {
+    const existingUser = await this.userService.findOne({ firstName });
+    if (existingUser) {
+    throw new BadRequestException('firstName existe déjà');
+    }
+    return firstName;
+    }
+
+  /* Fin test user.Name rentré dans BDD est unique */
 
 
   @Get('/login')
