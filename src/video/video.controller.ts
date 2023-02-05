@@ -6,6 +6,9 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { statSync, createReadStream } from 'fs';
 import { SampleDto } from './dto/Sample.dto';
 import { Video } from './schemas/video.schema';
+/* Model permet d'effectuer du CRUD sur la vidéo */
+import{ Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class FileSizeValidationPipe implements PipeTransform {
   transform(value: any, metadata: ArgumentMetadata) {
@@ -16,12 +19,30 @@ export class FileSizeValidationPipe implements PipeTransform {
 }
 
 @Controller('video')
-export class VideoController {
-  constructor(private readonly videoService: VideoService) {}
+  export class VideoController {
+    constructor(private readonly videoService: VideoService,
+    @InjectModel('Video') private readonly videoModel: Model<Video>
+  ) {}
+
+
+  /* Méthode pour enregistrer l'historique de visionnage dans la base de donnée */
+  async enregistrerHistorique(userId: string, videoId: string) {
+    const historique = new this.videoModel({
+      userId: userId,
+      videoId: videoId,
+      vieweAt: Date.now(),
+    });
+    await historique.save();
+  }
+  
   @Get('/:id')
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
   async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
+    /* Enregistrement de l'historique de visionnage */
+    const userId = headers.userid;
+    await this.enregistrerHistorique(userId, id);
+    
     const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -66,7 +87,7 @@ export class VideoController {
           fileType: 'image/jpeg',
         })
         .addMaxSizeValidator({
-          maxSize: 2000000
+          maxSize: 2000000000
         })
         .build({
           fileIsRequired: false,
