@@ -6,12 +6,11 @@ import { FilterQuery, Model } from 'mongoose';
 @Injectable()
 export class UserRepository {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
-  
-  
+
   async findOneByName(userFilterQuery: FilterQuery<User>): Promise<User> {
-    return this.userModel.findOne(userFilterQuery.firstName);
+    return this.userModel.findOne(userFilterQuery.userName);
   }
-  async findOne(userFilterQuery: FilterQuery<User>): Promise<User>{
+  async findOne(userFilterQuery: FilterQuery<User>): Promise<User> {
     return this.userModel.findOne(userFilterQuery);
   }
   async find(usersFilterQuery: FilterQuery<User>): Promise<User[]> {
