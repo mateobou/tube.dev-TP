@@ -9,16 +9,16 @@ export class Video {
   VideoId: string;
 
   @Prop()
-  MovieName: string;
-
-  @Prop()
-  DirectorOfMovie: string;
+  VideoName: string;
 
   @Prop()
   NomberOfView: number;
 
   @Prop()
   Rating: number;
+
+  @Prop()
+  UserId: string
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);

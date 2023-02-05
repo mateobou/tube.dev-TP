@@ -1,7 +1,7 @@
 export class CreateVideoDto {
     VideoId: string;
-    MovieName: string;
-    DirectorOfMovie: string;
-    NomberOfView: number;
-    Rating: number;
+    VideoName: string;
+    NumberOfView: number;
+    Rating:number;
+    UserId:string;
 }

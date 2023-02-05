@@ -1,28 +1,11 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Patch,
-  Header,
-  HttpStatus,
-  Res,
-  Headers,
-  Req,
-  UseInterceptors,
-  UploadedFile,
-  ParseFilePipeBuilder, 
-} from '@nestjs/common';
-import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
+import { Controller, Get,Headers, Post, Body, Patch, Param, Delete , Injectable, PipeTransform, ArgumentMetadata, Header, HttpStatus, ParseFilePipeBuilder, Res, UploadedFile, UseInterceptors} from '@nestjs/common';
 import { VideoService } from './video.service';
-import { Video } from './schemas/video.schema';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
-import { statSync, createReadStream } from 'fs';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { statSync, createReadStream } from 'fs';
 import { SampleDto } from './dto/Sample.dto';
-
+import { Video } from './schemas/video.schema';
 @Injectable()
 export class FileSizeValidationPipe implements PipeTransform {
   transform(value: any, metadata: ArgumentMetadata) {
@@ -35,7 +18,6 @@ export class FileSizeValidationPipe implements PipeTransform {
 @Controller('video')
 export class VideoController {
   constructor(private readonly videoService: VideoService) {}
-
   @Get('/:id')
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
@@ -73,28 +55,18 @@ export class VideoController {
   async getVideos(): Promise<Video[]> {
     return this.videoService.getVideos();
   }
-  
-  @UseInterceptors(FileInterceptor('file'))
-  @Post('file')
-  uploadFile(
-    @Body() body: SampleDto,
-    @UploadedFile() file: Express.Multer.File,
-  ) {
-    console.log("Le fichier a été uploadé : "+ file.size)
-    return {
-      body,
-      file: file.buffer.toString(),
-    };
-  }
 
   @UseInterceptors(FileInterceptor('file'))
   @Post('file/pass-validation')
   uploadFileAndPassValidation(
-    @Body() body: SampleDto,
+    @Body() body: CreateVideoDto,
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'json',
+          fileType: 'image/jpeg',
+        })
+        .addMaxSizeValidator({
+          maxSize: 2000000
         })
         .build({
           fileIsRequired: false,
@@ -102,50 +74,38 @@ export class VideoController {
     )
     file?: Express.Multer.File,
   ) {
+    console.log("Le fichier a été uploadé : "+ file.size)
+    this.videoService.createVideo(
+      body.VideoName,
+      body.UserId,
+      file.originalname,
+      file.buffer.toString()
+    );
     return {
       body,
       file: file?.buffer.toString(),
     };
   }
 
-  @UseInterceptors(FileInterceptor('file'))
-  @Post('file/fail-validation')
-  uploadFileAndFailValidation(
-    @Body() body: SampleDto,
-    @UploadedFile(
-      new ParseFilePipeBuilder()
-        .addFileTypeValidator({
-          fileType: 'jpg',
-        })
-        .build(),
-    )
-    file: Express.Multer.File,
-  ) {
-    return {
-      body,
-      file: file.buffer.toString(),
-    };
-  }
-  /*async createVideo(@Body() createVideoDto: CreateVideoDto, @Req() req): Promise<Video> {
-    console.log(req)
-    return this.videoService.createVideo(
-      createVideoDto.VideoId,
-      createVideoDto.MovieName,
-      createVideoDto.DirectorOfMovie,
-      createVideoDto.NomberOfView,
-      createVideoDto.Rating,
-    );
-  }*/
 
-  @Patch(':VideoId')
-  async updateVideo(@Body() updateVideoDto: UpdateVideoDto): Promise<Video> {
-    return this.videoService.updateVideo(
-      updateVideoDto.VideoId,
-      updateVideoDto.MovieName,
-      updateVideoDto.DirectorOfMovie,
-      updateVideoDto.NomberOfView,
-      updateVideoDto.Rating,
-    );
+  @Get()
+  findAll() {
+    return this.videoService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.videoService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateVideoDto: UpdateVideoDto) {
+    return this.videoService.update(+id, updateVideoDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.videoService.remove(+id);
   }
 }
 
