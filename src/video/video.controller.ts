@@ -22,7 +22,7 @@ export class VideoController {
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
   async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
-    const videoPath = `assets/${id}.mp4`;
+    const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
     if (videoRange) {
@@ -79,7 +79,7 @@ export class VideoController {
       body.VideoName,
       body.UserId,
       file.originalname,
-      file.buffer.toString()
+      file.buffer
     );
     return {
       body,
