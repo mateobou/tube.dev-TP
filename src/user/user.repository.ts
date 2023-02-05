@@ -8,7 +8,7 @@ export class UserRepository {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async findOneByName(userFilterQuery: FilterQuery<User>): Promise<User> {
-    return this.userModel.findOne(userFilterQuery.userName);
+    return this.userModel.findOne(userFilterQuery.username);
   }
   async findOne(userFilterQuery: FilterQuery<User>): Promise<User> {
     return this.userModel.findOne(userFilterQuery);
