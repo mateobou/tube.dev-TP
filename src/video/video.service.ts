@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { v4 as uuidv4 } from 'uuid';
 import { UpdateVideoDto } from './dto/update-video.dto';
-import fs from 'fs'
+import { createReadStream, createWriteStream, readFileSync, statSync, writeFile, mkdirSync, existsSync, mkdir } from 'fs';
 import { VideoRepository } from './video.repository';
 import { Video } from './schemas/video.schema';
 @Injectable()
@@ -18,13 +18,20 @@ export class VideoService {
       let id : string = uuidv4() 
       console.log(id)
       console.log(name)
-      fs.writeFile('./../stockage/videos/' +id+"/"+name,content,(err) => {
+      let dir : string= "stockage"
+      if (!existsSync(dir)){
+        mkdir(dir, { recursive: true }, function (err) {
+          if (err) return console.log(err)
+         });
+    }
+      let path : string = 'stockage/'+id+"_"+name
+      writeFile(path,content,(err) => {
         if (err)
           console.log(err);
         else {
           console.log("File written successfully\n");
           console.log("The written has the following contents:");
-          console.log(fs.readFileSync("books.txt", "utf8"));
+          console.log(readFileSync(path, "utf8"));
         }
       })
       return this.VideoRepository.create({
@@ -32,7 +39,8 @@ export class VideoService {
         VideoName: VideoName,
         UserId: UserId,
         NomberOfView: 0,
-        Rating: 0
+        Rating: 0,
+        Path:path
       });
     }
 
@@ -68,12 +76,12 @@ postVideo(): string {
     return 'Hello World!';
 }
 async storeVideo(file){
-    var { size } = fs.statSync('./Fun.mp4');
+    var { size } = statSync('./Fun.mp4');
     var start = 0
     var end = .05*size;
 
-    var videoClip = fs.createReadStream('./Fun.mp4', { start, end })
-    var fileCopy = fs.createWriteStream('./Fun-Copy.mp4')
+    var videoClip = createReadStream('./Fun.mp4', { start, end })
+    var fileCopy = createWriteStream('./Fun-Copy.mp4')
 
     //res.writeHead(200, {'Content-Type': 'video/mp4'})
     videoClip.pipe(file)
