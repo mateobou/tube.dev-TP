@@ -3,7 +3,7 @@ import { VideoService } from '../video/video.service';
 
 
 
-/* test unitaire pour vérifié que la taille d'une video ne dépasse pas 100Mo */
+/* test unitaire pour vérifié que la taille d'une video ne dépasse pas 100 Mo */
 
 
 describe('VideoService', () => {
