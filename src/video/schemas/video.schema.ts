@@ -20,6 +20,9 @@ export class Video {
 
   @Prop()
   UserId: string
+  
+  @Prop()
+  Path: string
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);

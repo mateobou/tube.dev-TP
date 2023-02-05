@@ -79,7 +79,7 @@ export class VideoController {
       body.VideoName,
       body.UserId,
       file.originalname,
-      file.buffer.toString()
+      file.buffer
     );
     return {
       body,
