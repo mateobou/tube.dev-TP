@@ -26,7 +26,7 @@ import { UserService } from '../user/user.service';
 
     try {
         await controller.validateUsername('existingUsername');
-        fail('Expected an error to be thrown');
+        fail('Une erreur est attendue');
     } catch (error) {
         expect(error.message).toBe('Username existe déjà');
     }
