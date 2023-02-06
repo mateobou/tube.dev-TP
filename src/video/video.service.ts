@@ -12,9 +12,10 @@ import {
   mkdir,
 } from 'fs';
 import { VideoRepository } from './video.repository';
-import { Video } from './schemas/video.schema';
+import { Video, VideoDocument } from './schemas/video.schema';
 @Injectable()
 export class VideoService {
+  videoModel: any;
   constructor(private readonly VideoRepository: VideoRepository) {}
   async createVideo(
     //Si l'ordre n'est pas comme dans la requête envoyée ça n'attribut pas la valeur au bon endroit !
@@ -49,6 +50,12 @@ export class VideoService {
       Rating: 0,
       Path: path,
     });
+  }
+
+  async findByTitle(title: string): Promise<VideoDocument[]> {
+    return this.videoModel
+      .find({ VideoName: { $regex: title, $options: 'i' } })
+      .exec();
   }
 
   findAll() {

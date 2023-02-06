@@ -59,9 +59,15 @@
     const video = document.getElementById("video");
 
     searchButton.addEventListener("click", () => {
-      const searchTerm = searchInput.value;
-      video.src = `http://localhost:3000/video/stream/${searchTerm}`;
-    });
+    const searchTerm = searchInput.value;
+    fetch(`http://localhost:3000/video/search/${searchTerm}`)
+      .then(response => response.json())
+      .then(data => {
+        // mettre à jour la liste des vidéos affichées ici
+        console.log(data);
+      });
+  });
+
   </script>
 </body>
 </html>

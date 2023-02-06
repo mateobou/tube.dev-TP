@@ -71,6 +71,10 @@ export class VideoController {
       createReadStream(videoPath).pipe(res);
     }
   }
+  @Get('search/:title')
+  async search(@Param('title') title: string) {
+    return this.videoService.findByTitle(title);
+  }
 
   @Get()
   async getVideos(): Promise<Video[]> {
