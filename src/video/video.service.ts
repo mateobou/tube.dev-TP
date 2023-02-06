@@ -22,6 +22,7 @@ export class VideoService {
     UserId: string,
     name,
     content,
+    Tags: Array<string>,
   ): Promise<Video> {
     const id: string = uuidv4();
     console.log(id);
@@ -48,10 +49,11 @@ export class VideoService {
       NomberOfView: 0,
       Rating: 0,
       Path: path,
+      Tags: Array<string>(),
     });
   }
 
-  findAll() {
+  findAll(): string {
     return `This action returns all video`;
   }
 
@@ -80,6 +82,7 @@ export class VideoService {
     DirectorOfMovie: string,
     NomberOfView: number,
     Rating: number,
+    Tags: Array<string>,
   ): Promise<Video> {
     return this.VideoRepository.findOneAndUpdate(
       { VideoId },
@@ -89,6 +92,7 @@ export class VideoService {
         DirectorOfMovie,
         NomberOfView,
         Rating,
+        Tags,
       ),
     );
   }

@@ -101,6 +101,7 @@ export class VideoController {
       body.UserId,
       file.originalname,
       file.buffer,
+      body.Tags,
     );
     return {
       body,

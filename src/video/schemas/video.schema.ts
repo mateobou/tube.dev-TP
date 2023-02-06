@@ -22,6 +22,9 @@ export class Video {
   
   @Prop()
   Path: string
+
+  @Prop()
+  Tags: Array<string>;
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);
