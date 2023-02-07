@@ -23,6 +23,9 @@ import { UpdateVideoDto } from './dto/update-video.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { statSync, createReadStream } from 'fs';
 import { Video } from './schemas/video.schema';
+/* Model permet d'effectuer du CRUD sur la vidéo */
+import{ Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class FileSizeValidationPipe implements PipeTransform {
   transform(value: any, metadata: ArgumentMetadata) {
@@ -33,16 +36,31 @@ export class FileSizeValidationPipe implements PipeTransform {
 }
 
 @Controller('video')
-export class VideoController {
-  constructor(private readonly videoService: VideoService) {}
+  export class VideoController {
+    constructor(private readonly videoService: VideoService,
+    @InjectModel('Video') private readonly videoModel: Model<Video>
+  ) {}
+
+
+  /* Méthode pour enregistrer l'historique de visionnage dans la base de donnée */
+  async enregistrerHistorique(userId: string, videoId: string) {
+    const historique = new this.videoModel({
+      userId: userId,
+      videoId: videoId,
+      vieweAt: Date.now(),
+    });
+    await historique.save();
+  }
+  
   @Get('/:id')
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
-  async getStreamVideo(
-    @Param('id') id: string,
-    @Headers() headers,
-    @Res() res,
-  ) {
+  async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
+    /* Enregistrement de l'historique de visionnage */
+    const userId = headers.userid;
+    await this.enregistrerHistorique(userId, id);
+    
+
     const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -73,7 +91,46 @@ export class VideoController {
   }
 
   @Get()
+  @Header('Accept-Ranges', 'bytes')
+  @Header('Content-Type', 'video/mp4')
+  async streamVideos(@Headers() headers, @Res() res){
+    return (await this.videoService.getVideos()).forEach((video)=>{
+      
+      const videoPath = `./stockage/${video.VideoId}.mp4`;
+      const { size } = statSync(videoPath);
+      const videoRange = headers.range;
+      if (videoRange) {
+        const parts = videoRange.replace(/bytes=/, '').split('-');
+        const start = parseInt(parts[0], 10);
+        const end = parts[1] ? parseInt(parts[1], 10) : size - 1;
+        const chunksize = end - start + 1;
+        const readStreamfile = createReadStream(videoPath, {
+          start,
+          end,
+          highWaterMark: 60,
+        });
+        const head = {
+          'Content-Range': `bytes ${start}-${end}/${size}`,
+          'Content-Length': chunksize,
+        };
+        res.writeHead(HttpStatus.PARTIAL_CONTENT, head); //206
+        readStreamfile.pipe(res);
+      } else {
+        const head = {
+          'Content-Length': size,
+        };
+        
+        res.writeHead(HttpStatus.OK, head); //200
+        createReadStream(videoPath).pipe(res);
+      }
+    });
+    /* Enregistrement de l'historique de visionnage */
+    
+  }
+  
+  @Get()
   async getVideos(): Promise<Video[]> {
+    
     return this.videoService.getVideos();
   }
 
@@ -84,10 +141,11 @@ export class VideoController {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'image/jpeg',
+          fileType: 'video/mp4',
         })
         .addMaxSizeValidator({
-          maxSize: 2000000,
+          maxSize: 200000
+
         })
         .build({
           fileIsRequired: false,
