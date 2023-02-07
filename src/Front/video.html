@@ -53,6 +53,24 @@
     </div>
   </main>
   <script>
+
+  const movies = [{"_id":"63d2d7c37ec51d52c0ab5b58","VideoId":"1","MovieName":"The Shawshank Redemption","DirectorOfMovie":"Frank Darabont","NomberOfView":1000000,"Rating":9.3,"__v":0},{"_id":"63d2dbb68a0043ea676b3e5c","VideoId":"2","MovieName":"The Godfather","DirectorOfMovie":"Francis Ford Coppola","Rating":9.2,"__v":0}, {"_id":"63d2d7c37ec51d52c0ab5b58","VideoId":"1","MovieName":"The Shawshank Redemption","DirectorOfMovie":"Frank Darabont","NomberOfView":1000000,"Rating":9.3,"__v":0},{"_id":"63d2dbb68a0043ea676b3e5c","VideoId":"2","MovieName":"Valenrtine","DirectorOfMovie":"Francis Ford Coppola","Rating":9.2,"__v":0},];
+  const searchInput = document.getElementById("search-input");
+
+  searchInput.addEventListener("input", function() {
+    const searchValue = this.value.toLowerCase();
+    const filteredMovies = movies.filter(function(movie) {
+    return movie.MovieName.toLowerCase().includes(searchValue);
+    });
+
+    filteredMovies.forEach(function(movie) {
+    console.log(movie.MovieName);
+    });
+  });
+
+
+
+/*
      // searchInput : qui représente un champ de saisie pour effectuer une recherche
      // searchButton : qui représente un bouton pour déclencher la recherche
      // videoContainer : qui représente un conteneur pour les résultats de la recherche de vidéos
@@ -72,6 +90,7 @@
       });
   });
 
+*/
   </script>
 </body>
 </html>
