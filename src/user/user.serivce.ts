@@ -6,13 +6,16 @@ import { User } from './schemas/user.schema';
 
 @Injectable()
 export class UserService {
+  findOne(arg0: { username: string; }) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private readonly userRepository: UserRepository) {}
 
   async getUseById(userId: string): Promise<User> {
     return this.userRepository.findOne({ userId });
   }
-  async getUserByFirstName(firstName: string): Promise<User> {
-    return this.userRepository.findOneByName({ firstName });
+  async getUserByusername(username: string): Promise<User> {
+    return this.userRepository.findOneByName({ username });
   }
   async getUser(): Promise<User[]> {
     return this.userRepository.find({});

@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, HydratedDocument } from 'mongoose';
-
+import { Document } from 'mongoose';
 
 export type VideoDocument = Video & Document;
 
@@ -23,6 +22,9 @@ export class Video {
   
   @Prop()
   Path: string
+
+  @Prop()
+  Tags: Array<string>;
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);

@@ -1,10 +1,27 @@
-import { Controller, Get,Headers, Post, Body, Patch, Param, Delete , Injectable, PipeTransform, ArgumentMetadata, Header, HttpStatus, ParseFilePipeBuilder, Res, UploadedFile, UseInterceptors} from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Headers,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Injectable,
+  PipeTransform,
+  ArgumentMetadata,
+  Header,
+  HttpStatus,
+  ParseFilePipeBuilder,
+  Res,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
 import { VideoService } from './video.service';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { statSync, createReadStream } from 'fs';
-import { SampleDto } from './dto/Sample.dto';
 import { Video } from './schemas/video.schema';
 /* Model permet d'effectuer du CRUD sur la vidéo */
 import{ Model } from 'mongoose';
@@ -43,6 +60,7 @@ export class FileSizeValidationPipe implements PipeTransform {
     const userId = headers.userid;
     await this.enregistrerHistorique(userId, id);
     
+
     const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -66,7 +84,7 @@ export class FileSizeValidationPipe implements PipeTransform {
       const head = {
         'Content-Length': size,
       };
-      
+
       res.writeHead(HttpStatus.OK, head); //200
       createReadStream(videoPath).pipe(res);
     }
@@ -127,6 +145,7 @@ export class FileSizeValidationPipe implements PipeTransform {
         })
         .addMaxSizeValidator({
           maxSize: 200000
+
         })
         .build({
           fileIsRequired: false,
@@ -134,19 +153,19 @@ export class FileSizeValidationPipe implements PipeTransform {
     )
     file?: Express.Multer.File,
   ) {
-    console.log("Le fichier a été uploadé : "+ file.size)
+    console.log('Le fichier a été uploadé : ' + file.size);
     this.videoService.createVideo(
       body.VideoName,
       body.UserId,
       file.originalname,
-      file.buffer
+      file.buffer,
+      body.Tags,
     );
     return {
       body,
       file: file?.buffer.toString(),
     };
   }
-
 
   @Get()
   findAll() {
