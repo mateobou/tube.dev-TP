@@ -55,25 +55,90 @@
   </main>
   <script>
 
-const movies = [{"_id":"63d2d7c37ec51d52c0ab5b58","VideoId":"1","MovieName":"The Shawshank Redemption","DirectorOfMovie":"Frank Darabont","NomberOfView":1000000,"Rating":9.3,"__v":0},{"_id":"63d2dbb68a0043ea676b3e5c","VideoId":"2","MovieName":"The Godfather","DirectorOfMovie":"Francis Ford Coppola","Rating":9.2,"__v":0},{"_id":"63d2dbca8a0043ea676b3e5e","VideoId":"3","MovieName":"The Dark Knight","DirectorOfMovie":"Christopher Nolan","Rating":9,"__v":0},{"_id":"63d2dbd38a0043ea676b3e60","VideoId":"4","MovieName":"The Godfather: Part II","DirectorOfMovie":"Francis Ford Coppola","Rating":9,"__v":0},{"_id":"63d2dbdb8a0043ea676b3e62","VideoId":"5","MovieName":"The Lord of the Rings: The Return of the King","DirectorOfMovie":"Peter Jackson","Rating":9,"__v":0},{"_id":"63d2dbe08a0043ea676b3e64","VideoId":"6","MovieName":"Pulp Fiction","DirectorOfMovie":"Quentin Tarantino","Rating":8.9,"__v":0},{"_id":"63dc11d986b9e2263a732f54","VideoId":"7","MovieName":"test","DirectorOfMovie":"test","NomberOfView":2000,"Rating":3.9,"__v":0},{"_id":"63de276b1b7079b157511d59","__v":0},{"_id":"63de27971b7079b157511d5b","__v":0},{"_id":"63de2c86818e5254f22863be","__v":0},{"_id":"63de2d5dbe5f9011c66b9818","__v":0},{"_id":"63de2e717ae54015b1de6956","__v":0},{"_id":"63dfdd066593b36583185038","VideoId":"369aaa89-88a5-459d-af66-e8f96a519093","VideoName":"Test","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfdf0d6593b3658318503a","VideoId":"cd0914cf-4232-49e4-83e3-0df7984934c3","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe131e9426d5a6a2e0eb6","VideoId":"6ab3f9da-af44-4788-9565-e07b5ea3f226","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe1b0230330814e650d36","VideoId":"f97edaec-6377-49ac-af17-35e3d6dcad11","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe34c36abf404a33c7420","VideoId":"6ce1683b-5ef9-44e1-93b4-7818056a8eca","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe47a2bab7c848332c10a","VideoId":"6d1f0258-245e-418b-8255-57481d733565","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe4feba7127baf350ffdd","VideoId":"bbb4c4bd-8a66-4236-9588-a97f9a55cbaf","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe51332a0f8d6ecdf2794","VideoId":"336ffddd-ca37-446a-9028-45d338121a8a","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe52792cb82a30970d813","VideoId":"5fe5113c-4717-4dc7-929b-d2e5740f9cf1","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe5727e6a3cf316d7a477","VideoId":"ee6a5d1e-ca98-4ddf-9a99-349ae9618c53","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe59808e91a5e90f24473","VideoId":"316d7965-e6a8-44d5-97d6-51bd9084cd43","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe5bf406eb1c8395c9d5b","VideoId":"87103dc3-70a5-4609-b07d-de6eeff55837","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe62dcfceb5e0d23fba21","VideoId":"0fb27edc-38ec-414b-85ba-ab3915203864","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe70a0d94e4da1a98f68c","VideoId":"b2d8d58a-7b76-4c25-adcc-55084e5e99da","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/b2d8d58a-7b76-4c25-adcc-55084e5e99da_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe73977f6ffce8017f98e","VideoId":"f9ecdcb9-ded2-40ee-a5cc-ec74cfbe55fa","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/f9ecdcb9-ded2-40ee-a5cc-ec74cfbe55fa_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe7b577f6ffce8017f990","VideoId":"2c3adea0-cdeb-478d-9c2c-ab03f5ddfe4b","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/2c3adea0-cdeb-478d-9c2c-ab03f5ddfe4b_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe8a477f6ffce8017f992","VideoId":"20224b70-8353-4b91-a80a-e676033dd635","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/20224b70-8353-4b91-a80a-e676033dd635_PC261134_4 (1).JPG","__v":0},{"_id":"63e01ad0aa5350b7e16c8b74","VideoId":"7d6e0fa2-8be6-45d6-8879-b4bdecdaeb4e","VideoName":"Mateo","NomberOfView":0,"Rating":0,"Path":"stockage/7d6e0fa2-8be6-45d6-8879-b4bdecdaeb4e_PC261134_4 (1).JPG","__v":0},{"_id":"63e01b48a6d427aba62a67be","__v":0},{"_id":"63e01b48a6d427aba62a67c0","__v":0}];
-     // searchInput : qui représente un champ de saisie pour effectuer une recherche
-     // searchButton : qui représente un bouton pour déclencher la recherche
-     // videoContainer : qui représente un conteneur pour les résultats de la recherche de vidéos
-     // video : qui représente un élément vidéo individuel
-    const searchInput = document.getElementById("search-input");
-    const searchButton = document.getElementById("search-button");
-    const videoContainer = document.getElementById("video-container");
-    const video = document.getElementById("video");
 
-    searchButton.addEventListener("click", () => {
+const movies = [{"_id":"63d2d7c37ec51d52c0ab5b58","VideoId":"1","MovieName":"The Shawshank Redemption","DirectorOfMovie":"Frank Darabont","NomberOfView":1000000,"Rating":9.3,"__v":0},{"_id":"63d2dbb68a0043ea676b3e5c","VideoId":"2","MovieName":"The Godfather","DirectorOfMovie":"Francis Ford Coppola","Rating":9.2,"__v":0},{"_id":"63d2dbca8a0043ea676b3e5e","VideoId":"3","MovieName":"The Dark Knight","DirectorOfMovie":"Christopher Nolan","Rating":9,"__v":0},{"_id":"63d2dbd38a0043ea676b3e60","VideoId":"4","MovieName":"The Godfather: Part II","DirectorOfMovie":"Francis Ford Coppola","Rating":9,"__v":0},{"_id":"63d2dbdb8a0043ea676b3e62","VideoId":"5","MovieName":"The Lord of the Rings: The Return of the King","DirectorOfMovie":"Peter Jackson","Rating":9,"__v":0},{"_id":"63d2dbe08a0043ea676b3e64","VideoId":"6","MovieName":"Pulp Fiction","DirectorOfMovie":"Quentin Tarantino","Rating":8.9,"__v":0},{"_id":"63dc11d986b9e2263a732f54","VideoId":"7","MovieName":"test","DirectorOfMovie":"test","NomberOfView":2000,"Rating":3.9,"__v":0},{"_id":"63de276b1b7079b157511d59","__v":0},{"_id":"63de27971b7079b157511d5b","__v":0},{"_id":"63de2c86818e5254f22863be","__v":0},{"_id":"63de2d5dbe5f9011c66b9818","__v":0},{"_id":"63de2e717ae54015b1de6956","__v":0},{"_id":"63dfdd066593b36583185038","VideoId":"369aaa89-88a5-459d-af66-e8f96a519093","VideoName":"Test","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfdf0d6593b3658318503a","VideoId":"cd0914cf-4232-49e4-83e3-0df7984934c3","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe131e9426d5a6a2e0eb6","VideoId":"6ab3f9da-af44-4788-9565-e07b5ea3f226","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe1b0230330814e650d36","VideoId":"f97edaec-6377-49ac-af17-35e3d6dcad11","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe34c36abf404a33c7420","VideoId":"6ce1683b-5ef9-44e1-93b4-7818056a8eca","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe47a2bab7c848332c10a","VideoId":"6d1f0258-245e-418b-8255-57481d733565","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe4feba7127baf350ffdd","VideoId":"bbb4c4bd-8a66-4236-9588-a97f9a55cbaf","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe51332a0f8d6ecdf2794","VideoId":"336ffddd-ca37-446a-9028-45d338121a8a","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe52792cb82a30970d813","VideoId":"5fe5113c-4717-4dc7-929b-d2e5740f9cf1","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe5727e6a3cf316d7a477","VideoId":"ee6a5d1e-ca98-4ddf-9a99-349ae9618c53","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe59808e91a5e90f24473","VideoId":"316d7965-e6a8-44d5-97d6-51bd9084cd43","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe5bf406eb1c8395c9d5b","VideoId":"87103dc3-70a5-4609-b07d-de6eeff55837","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe62dcfceb5e0d23fba21","VideoId":"0fb27edc-38ec-414b-85ba-ab3915203864","VideoName":"Image","NomberOfView":0,"Rating":0,"__v":0},{"_id":"63dfe70a0d94e4da1a98f68c","VideoId":"b2d8d58a-7b76-4c25-adcc-55084e5e99da","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/b2d8d58a-7b76-4c25-adcc-55084e5e99da_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe73977f6ffce8017f98e","VideoId":"f9ecdcb9-ded2-40ee-a5cc-ec74cfbe55fa","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/f9ecdcb9-ded2-40ee-a5cc-ec74cfbe55fa_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe7b577f6ffce8017f990","VideoId":"2c3adea0-cdeb-478d-9c2c-ab03f5ddfe4b","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/2c3adea0-cdeb-478d-9c2c-ab03f5ddfe4b_PC261134_4 (1).JPG","__v":0},{"_id":"63dfe8a477f6ffce8017f992","VideoId":"20224b70-8353-4b91-a80a-e676033dd635","VideoName":"Image","NomberOfView":0,"Rating":0,"Path":"stockage/20224b70-8353-4b91-a80a-e676033dd635_PC261134_4 (1).JPG","__v":0},{"_id":"63e01ad0aa5350b7e16c8b74","VideoId":"7d6e0fa2-8be6-45d6-8879-b4bdecdaeb4e","VideoName":"Mateo","NomberOfView":0,"Rating":0,"Path":"stockage/7d6e0fa2-8be6-45d6-8879-b4bdecdaeb4e_PC261134_4 (1).JPG","__v":0},{"_id":"63e01b48a6d427aba62a67be","__v":0},{"_id":"63e01b48a6d427aba62a67c0","__v":0}];
+
+
+// searchinput renvoit valeur tapé input texte
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+/*
+const wordTape = searchButton.addEventListener("click", () => {
+   // console.log(movies[i].MovieName);
+    console.log(searchInput.value);
+});
+*/
+// ecrire html dans js
+
+document.write("Liste des noms de film disponible dans la recherche : <br><br>");
+
+// boucle for pour parcourir le tableau movies
+for (i = 0; i < movies.length; i++) {
+    if (movies[i].MovieName !== undefined) {
+      document.write(movies[i].MovieName + "<br>");
+    }
+}
+
+// recherche dans le tableau movies, si le nom du film est présent dit le et inversement
+const wordTape = searchButton.addEventListener("click", () => {
     const searchTerm = searchInput.value;
-    fetch(`http://localhost:3000/video/search/${searchTerm}`)
-      .then(response => response.json())
-      .then(data => {
-        // mettre à jour la liste des vidéos affichées ici
-        console.log(data);
-      });
-  });
+    const foundMovie = movies.find(movie => movie.MovieName === searchTerm);
+    if (foundMovie) {
+        console.log("Nous avons trouvé votre" + foundMovie.MovieName);
+    } else {
+        console.log("Votre film n'a pas été trouvé dans notre base de données");
+    }
+});
+
+
+
+
+
+  
+    
+
+    
+
+
+/*
+const searchTerm = event.target.value;
+
+const foundMovie = movies.find(movie => movie.MovieName === searchTerm);
+
+console.log(foundMovie);
+
+if (foundMovie) {
+console.log("Nous avons trouvé votre" + foundMovie.MovieName);
+} 
+
+*/
+
+/* else {
+  console.log("Votre film n'a pas été trouvé dans notre base de données");
+}
+}); */
+
+
+/*
+      // searchInput : qui représente un champ de saisie pour effectuer une recherche
+      // searchButton : qui représente un bouton pour déclencher la recherche
+      // videoContainer : qui représente un conteneur pour les résultats de la recherche de vidéos
+      // video : qui représente un élément vidéo individuel
+      const searchInput = document.getElementById("search-input");
+      const searchButton = document.getElementById("search-button");
+      const videoContainer = document.getElementById("video-container");
+      const video = document.getElementById("video");
+
+      searchButton.addEventListener("click", () => {
+      const searchTerm = searchInput.value;
+      fetch(`http://localhost:3000/video/search/${searchTerm}`)
+        .then(response => response.json())
+        .then(data => {
+          // mettre à jour la liste des vidéos affichées ici
+          console.log(data);
+        });
+    });
+*/
 
   </script>
 </body>
