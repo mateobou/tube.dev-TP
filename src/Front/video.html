@@ -84,39 +84,21 @@ const wordTape = searchButton.addEventListener("click", () => {
     const searchTerm = searchInput.value;
     const foundMovie = movies.find(movie => movie.MovieName === searchTerm);
     if (foundMovie) {
-        console.log("Nous avons trouvé votre" + foundMovie.MovieName);
+        console.log("Nous avons trouvé " + foundMovie.MovieName);
     } else {
         console.log("Votre film n'a pas été trouvé dans notre base de données");
     }
 });
 
 
+// fetch pour récupéer les données du serveur à http://localhost:3000 et les afficher dans la console
+fetch("http://localhost:3000")
+    .then(response => response.json())
+    .then(data => {
+        // mettre à jour la liste des vidéos affichées ici
+        console.log(data);
+    });
 
-
-
-  
-    
-
-    
-
-
-/*
-const searchTerm = event.target.value;
-
-const foundMovie = movies.find(movie => movie.MovieName === searchTerm);
-
-console.log(foundMovie);
-
-if (foundMovie) {
-console.log("Nous avons trouvé votre" + foundMovie.MovieName);
-} 
-
-*/
-
-/* else {
-  console.log("Votre film n'a pas été trouvé dans notre base de données");
-}
-}); */
 
 
 /*
@@ -139,6 +121,7 @@ console.log("Nous avons trouvé votre" + foundMovie.MovieName);
         });
     });
 */
+
 
   </script>
 </body>
