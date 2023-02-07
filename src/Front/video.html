@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="video.ts"></script>
+  <title>Protube</title>
+  <link rel="stylesheet" type="text/css" href="video.css">
+</head>
+<body>
+  <header>
+    <div id="search-container">
+      <input type="text" placeholder="Rechercher une vidéo">
+      <button>Rechercher</button>
+    </div>
+  </header>
+  <main>
+    <aside>
+      <div class="filter-container" id="filter-container">
+        <h2>Filtres</h2>
+        <form>
+          <div class="filter">
+            <label for="sort-by">Trier par :</label>
+            <select id="sort-by" name="sort-by">
+              <option value="recent">Récent</option>
+              <option value="popular">Populaire</option>
+              <option value="trending">Tendance</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="category">Catégorie :</label>
+            <select id="category" name="category">
+              <option value="all">Toutes</option>
+              <option value="music">Musique</option>
+              <option value="gaming">Gaming</option>
+              <option value="education">Education</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="duration">Durée :</label>
+            <select id="duration" name="duration">
+              <option value="all">Toutes</option>
+              <option value="short">Courte</option>
+              <option value="medium">Moyenne</option>
+              <option value="long">Longue</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </aside>
+    <div id="video-container">
+      <video id="video">
+        <source src="http://localhost:3000/video/stream/1" type="video/mp4">
+      <video id="video" controls="true" autoplay="true">
+        <source src="http://localhost:3000/video/20224b70-8353-4b91-a80a-e676033dd635" type="video/mp4" >
+      </video>
+    </div>
+  </main>
+</body>
+</html>
