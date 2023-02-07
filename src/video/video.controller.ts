@@ -73,7 +73,46 @@ export class FileSizeValidationPipe implements PipeTransform {
   }
 
   @Get()
+  @Header('Accept-Ranges', 'bytes')
+  @Header('Content-Type', 'video/mp4')
+  async streamVideos(@Headers() headers, @Res() res){
+    return (await this.videoService.getVideos()).forEach((video)=>{
+      
+      const videoPath = `./stockage/${video.VideoId}.mp4`;
+      const { size } = statSync(videoPath);
+      const videoRange = headers.range;
+      if (videoRange) {
+        const parts = videoRange.replace(/bytes=/, '').split('-');
+        const start = parseInt(parts[0], 10);
+        const end = parts[1] ? parseInt(parts[1], 10) : size - 1;
+        const chunksize = end - start + 1;
+        const readStreamfile = createReadStream(videoPath, {
+          start,
+          end,
+          highWaterMark: 60,
+        });
+        const head = {
+          'Content-Range': `bytes ${start}-${end}/${size}`,
+          'Content-Length': chunksize,
+        };
+        res.writeHead(HttpStatus.PARTIAL_CONTENT, head); //206
+        readStreamfile.pipe(res);
+      } else {
+        const head = {
+          'Content-Length': size,
+        };
+        
+        res.writeHead(HttpStatus.OK, head); //200
+        createReadStream(videoPath).pipe(res);
+      }
+    });
+    /* Enregistrement de l'historique de visionnage */
+    
+  }
+  
+  @Get()
   async getVideos(): Promise<Video[]> {
+    
     return this.videoService.getVideos();
   }
 
@@ -84,10 +123,10 @@ export class FileSizeValidationPipe implements PipeTransform {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'image/jpeg',
+          fileType: 'video/mp4',
         })
         .addMaxSizeValidator({
-          maxSize: 2000000000
+          maxSize: 200000
         })
         .build({
           fileIsRequired: false,
