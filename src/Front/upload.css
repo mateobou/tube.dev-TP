@@ -58,3 +58,23 @@ input[type="file"], input[type="submit"] {
   color: #fff;
   cursor: pointer;
 }
+
+#pharsePersonnalisé {
+  font-style: italic;
+}
+
+#boutonbAddCategory {
+  margin-top: 0px;
+  max-width: 4em;
+  max-height: 2.8em;
+  margin-left: 0.3em;
+}
+
+/* in same line */
+#blocPersonnalisationCategories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
