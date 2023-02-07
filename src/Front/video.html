@@ -62,12 +62,7 @@ const movies = [{"_id":"63d2d7c37ec51d52c0ab5b58","VideoId":"1","MovieName":"The
 // searchinput renvoit valeur tapé input texte
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
-/*
-const wordTape = searchButton.addEventListener("click", () => {
-   // console.log(movies[i].MovieName);
-    console.log(searchInput.value);
-});
-*/
+
 // ecrire html dans js
 
 document.write("Liste des noms de film disponible dans la recherche : <br><br>");
@@ -89,15 +84,6 @@ const wordTape = searchButton.addEventListener("click", () => {
         console.log("Votre film n'a pas été trouvé dans notre base de données");
     }
 });
-
-
-// fetch pour récupéer les données du serveur à http://localhost:3000 et les afficher dans la console
-fetch("http://localhost:3000")
-    .then(response => response.json())
-    .then(data => {
-        // mettre à jour la liste des vidéos affichées ici
-        console.log(data);
-    });
 
 
 
