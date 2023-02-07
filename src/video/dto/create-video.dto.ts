@@ -4,4 +4,5 @@ export class CreateVideoDto {
     NumberOfView: number;
     Rating:number;
     UserId:string;
+    Tags: Array<string>;
 }

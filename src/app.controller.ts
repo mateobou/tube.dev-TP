@@ -18,4 +18,10 @@ export class AppController {
   getProfile(@Request() req) {
     return req.user;
   }
+
+  @Get('/hello')
+  getHello(): string {
+    return 'Page bonjour!';
+  }
+
 }

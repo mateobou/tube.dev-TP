@@ -22,6 +22,8 @@ export class VideoController {
   @Header('Accept-Ranges', 'bytes')
   @Header('Content-Type', 'video/mp4')
   async getStreamVideo(@Param('id') id: string, @Headers() headers, @Res() res) {
+    let newVideo = {...this.videoService.getVideoById(id),NomberOfView:(await this.videoService.getVideoById(id)).NomberOfView++}
+    this.update(id, {})
     const videoPath = `./stockage/${id}.mp4`;
     const { size } = statSync(videoPath);
     const videoRange = headers.range;
@@ -79,7 +81,8 @@ export class VideoController {
       body.VideoName,
       body.UserId,
       file.originalname,
-      file.buffer
+      file.buffer,
+      "new"
     );
     return {
       body,

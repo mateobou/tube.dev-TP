@@ -1,15 +1,64 @@
 <html>
   <head>
-    <title>Envoyer une vidéo</title>
+    <meta charset="utf-8">
+    <title>Uploader une vidéo</title>
+    <script>
+      const boutonAddCategory = document.querySelector("#boutonbAddCategory");
+      boutonAddCategory.addEventListener("click", function() {
+        const container = document.querySelector("#blocPersonnalisationCategories");
+        const input = document.createElement("#champsCategorieInputText");
+        input.type = "text";
+        container.appendChild(input);
+      });
+    </script>
     
     <link rel="stylesheet" href="./upload.css">
   </head>
   <body>
-    <form action="http://localhost:3000/video/file/pass-validation" method="post" enctype="multipart/form-data">
-        <input type="text" name="VideoName" placeholder="Nom de la vidéo" required><br><br>
-        <input type="text" name="author" placeholder="Auteur" required><br><br>
-        <input type="file" name="file" required><br><br>
-        <input type="submit" value="Envoyer">
+    <div class="container">
+      <h1>Uploader une vidéo</h1>
+      <form action="http://localhost:3000/video/file/pass-validation" method="post" enctype="multipart/form-data">
+          <input type="text" name="VideoName" placeholder="Nom de la vidéo" required><br><br>
+          <input type="text" name="author" placeholder="Auteur" required><br><br>
+          <div class="filter-container" id="filter-container">
+            <form>
+              <label for="sort-by">Trier par :</label>
+                <select id="sort-by" name="sort-by">
+                  <option value="recent">Récent</option>
+                  <option value="popular">Populaire</option>
+                  <option value="trending">Tendance</option>
+                </select>
+              <br><br>
+              <label for="category">Catégorie :</label>
+                <select id="category" name="category">
+                  <option value="all">Toutes</option>
+                  <option value="music">Musique</option>
+                  <option value="gaming">Gaming</option>
+                  <option value="education">Education</option>
+                </select>
+                <br><br>
+                <p id="pharsePersonnalisé">Taper une catégorie personnalisée</p>
+                <div id="blocPersonnalisationCategories">
+                  <input id="champsCategorieInputText" type="text" name="category" placeholder="Catégorie" required>
+                  <button id="boutonbAddCategory">+</button>
+                 
+                </div>
+                <br><br>
+              <label for="duration">Durée :</label>
+                <select id="duration" name="duration">
+                  <option value="all">Toutes</option>
+                  <option value="short">Courte</option>
+                  <option value="medium">Moyenne</option>
+                  <option value="long">Longue</option>
+                </select>
+            </form>
+          </div>
+          <input type="file" name="file" required><br><br>
+          <input type="submit" value="Envoyer">
+          <a href="video.html">
+            <button>Retourner sur la page d'acceuil</button>
+          </a>
+    </div>
     </form>
   </body>
 </html>

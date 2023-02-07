@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Inscription</title>
@@ -6,8 +7,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Rejoignez la communauté YouTube</h1>
+        <h1> Bienvenue sur Protube </h1>
         <form action="http://localhost:3000/users" method="POST">
+<<<<<<< HEAD
             <label for="email">Adresse e-mail</label>
             <input type="email" name="email" id="email" required>
             <label for="username">username</label>
@@ -17,6 +19,24 @@
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required>
             <button type="submit">S'inscrire</button>
+=======
+            <div class="form-input">
+                <input type="email" name="email" id="email" required placeholder="Adresse e-mail">
+            </div>
+            <div class="form-input">
+                <input type="text" name="username" id="username" required placeholder="username">
+            </div>
+            <div class="form-input">
+                <input type="text" name="lastName" id="lastName" required placeholder="lastName">
+            </div>
+            <div class="form-input">
+                <input type="password" name="password" id="password" required placeholder="Mot de passe">
+            </div>
+            <div class="container-bouton"> 
+                <button type="submit">S'inscrire</button>
+                <button href="connexion.html">J'ai déjà un compte</button>
+            </div>
+>>>>>>> 88e6914bd570d5a572e854497eb2e582e2d59a1e
         </form>
     </div>
 </body>

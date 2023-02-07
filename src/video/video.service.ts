@@ -6,6 +6,18 @@ import { VideoRepository } from './video.repository';
 import { Video } from './schemas/video.schema';
 @Injectable()
 export class VideoService {
+  findAll() {
+    throw new Error('Method not implemented.');
+  }
+  findOne(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
+  update(arg0: number, updateVideoDto: UpdateVideoDto) {
+    throw new Error('Method not implemented.');
+  }
+  remove(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
   constructor (
     private readonly VideoRepository: VideoRepository ) {}
     async createVideo(
@@ -13,7 +25,8 @@ export class VideoService {
       VideoName: string,
       UserId:string,
       name,
-      content
+      content,
+      tags:["new"]
     ): Promise<Video> {
       let id : string = uuidv4() 
       console.log(id)
@@ -40,25 +53,12 @@ export class VideoService {
         UserId: UserId,
         NomberOfView: 0,
         Rating: 0,
-        Path:path
+        Path:path,
+        Tags:tags
       });
     }
 
-  findAll() {
-    return `This action returns all video`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} video`;
-  }
-
-  update(id: number, updateVideoDto: UpdateVideoDto) {
-    return `This action updates a #${id} video`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} video`;
-  }
+  
   async getVideoById(videoId: string): Promise<Video> {
     return this.VideoRepository.findOne({ videoId })
 }
@@ -67,8 +67,8 @@ async getVideos(): Promise<Video[]> {
     return this.VideoRepository.find({});
 }
 
-async updateVideo(VideoId: string, MovieName: string, DirectorOfMovie: string, NomberOfView: number, Rating: number): Promise<Video> {
-    return this.VideoRepository.findOneAndUpdate({ VideoId }, await this.updateVideo(VideoId, MovieName, DirectorOfMovie, NomberOfView, Rating));
+async updateVideo(VideoId: string, VideoName: string, NomberOfView: number, Rating: number): Promise<Video> {
+    return this.VideoRepository.findOneAndUpdate({ VideoId }, await this.updateVideo(VideoId, VideoName, NomberOfView, Rating));
 
 }
 
