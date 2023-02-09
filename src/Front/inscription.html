@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <link rel="stylesheet" href="inscription.css">
+    <script src="requet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1> Bienvenue sur Protube </h1>
+        <form action="http://localhost:3000/users" method="POST">
+            <div class="form-input">
+                <input type="email" name="email" id="email" required placeholder="Adresse e-mail">
+            </div>
+            <div class="form-input">
+                <input type="text" name="username" id="username" required placeholder="username">
+            </div>
+            <div class="form-input">
+                <input type="text" name="lastName" id="lastName" required placeholder="lastName">
+            </div>
+            <div class="form-input">
+                <input type="password" name="password" id="password" required placeholder="Mot de passe">
+            </div>
+            <div class="container-bouton"> 
+                <button type="submit">S'inscrire</button>
+                <button href="Connexion.html">J'ai déjà un compte</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
